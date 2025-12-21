@@ -1,57 +1,38 @@
 const mongoose = require("mongoose");
-const Users = mongoose.model("edtechusers");
+const Subjects = mongoose.model("subjects");
 
 module.exports = (app) => {
-  // Add New User
-  app.post("/api/v1/user/add", async (req, res) => {
-    const { name, email, password, classnumber ,parentnumber} = req.body;
+  // Add New Subject
+  app.post("/api/v1/subject/add", async (req, res) => {
+    const { classnumber,name } = req.body;
 
     try {
-      const user = await Users.findOne({ email });
-
-      if (user) {
-        return res.status(400).json({ message: "User already exists" });
+      const subject = await Subjects.findOne({ name });
+      if (subject) {
+        return res.status(400).json({ message: "Subject already exists" });
       }
 
-      userFields = { name, email, password, classnumber ,parentnumber };
+      subjectFields = { classnumber, name };
 
-      const response = await Users.create(userFields);
+      const response = await Subjects.create(subjectFields);
 
-      res.status(201).json({ message: "User added successfully", response });
+      res.status(201).json({ message: "Subject added successfully", response });
     } catch (error) {
       console.log(error);
       res.status(500).json({ message: error.message });
     }
   });
 
-//   Get One User
-  app.get("/api/v1/user/get/:email", async (req, res) => {
-    const email = req.params.email;
-
+  // Get All Subjects
+    app.get("/api/v1/subject/all/get", async (req, res) => {
     try {
-      const user = await Users.findOne({ email });
+      const subjects = await Subjects.find();
 
-      if (!user) {
-        return res.status(400).json({ message: "User doesn't exist" });
+      if (!subjects) {
+        return res.status(400).json({ message: "There are no subjects." });
       }
 
-      res.status(201).json({ message: "Here is the user: ", user });
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({ message: error.message });
-    }
-  });
-
-  // Get All Users
-    app.get("/api/v1/user/all/get", async (req, res) => {
-    try {
-      const users = await Users.find();
-
-      if (!users) {
-        return res.status(400).json({ message: "There are no users." });
-      }
-
-      res.status(201).json({ message: "Users: ", users });
+      res.status(201).json({ message: "Subjects: ", subjects });
     } catch (error) {
       console.log(error);
       res.status(500).json({ message: error.message });

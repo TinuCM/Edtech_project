@@ -21,8 +21,10 @@ mongoose
 // require("./models/Movie");
 require("./Models/User");
 
+
 // Routes
 require("./Routes/UserRoutes.js")(app); 
+require("./Routes/edtechroutes.js")(app);
 // require("./routes/authRoutes")(app); // Authentication BackEnd
 
 app.listen(port, () => {
