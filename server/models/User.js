@@ -8,48 +8,6 @@ const userSchema = new mongoose.Schema({
   classnumber: Number,
   parentnumber:Number,
 });
-const subjectSchema = new mongoose.Schema({
-  classnumber: Number,
-  name: String
-});
 
-const chapterSchema = new mongoose.Schema({
-  subjectId: mongoose.Schema.Types.ObjectId,
-  name: String,
-  description: String,
-  videourl: String,
-
-});
-const progressSchema = new mongoose.Schema({
-  userId: mongoose.Schema.Types.ObjectId,
-  subjectId: mongoose.Schema.Types.ObjectId,
-  chapterId: mongoose.Schema.Types.ObjectId,
-  completed: Boolean
-});
-const quizScoreSchema = new mongoose.Schema({
-  userId: mongoose.Schema.Types.ObjectId,
-  subjectId: mongoose.Schema.Types.ObjectId,
-  chapterId: mongoose.Schema.Types.ObjectId,
-  score: Number,
-  totalMarks: Number
-});
-const quizQuestionSchema = new mongoose.Schema({
-  subjectId: mongoose.Schema.Types.ObjectId,
-  chapterId: mongoose.Schema.Types.ObjectId,
-  question: String,
-  options: [String],
-  correctAnswer: String
-});
-const leaderboardSchema = new mongoose.Schema({
-  userId: mongoose.Schema.Types.ObjectId,
-  classnumber: Number,
-  totalScore: Number
-});
     
 mongoose.model("edtechusers", userSchema);
-mongoose.model("subjects", subjectSchema);
-mongoose.model("chapters", chapterSchema);
-mongoose.model("progress", progressSchema);
-mongoose.model("quizScores", quizScoreSchema);
-mongoose.model("leaderboards", leaderboardSchema);
-mongoose.model("quizquestions",quizQuestionSchema);

@@ -20,6 +20,12 @@ mongoose
 // Models
 // require("./models/Movie");
 require("./Models/User");
+require("./Models/Subject");
+require("./Models/Chapter");
+require("./Models/Progress");
+require("./Models/QuizScore");
+require("./Models/QuizQuestions");
+require("./Models/Leaderboard");
 
 
 // Routes
