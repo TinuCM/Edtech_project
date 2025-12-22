@@ -23,9 +23,10 @@ require("./Models/User");
 
 
 // Routes
-require("./Routes/UserRoutes.js")(app); 
+require("./Routes/SubjectRoutes.js")(app); 
 require("./Routes/edtechroutes.js")(app);
-// require("./routes/authRoutes")(app); // Authentication BackEnd
+require("./Routes/authRoutes")(app); // Authentication BackEnd
+require("./Routes/ChaptersRoutes")(app); // Authentication BackEnd
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

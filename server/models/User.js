@@ -15,7 +15,10 @@ const subjectSchema = new mongoose.Schema({
 
 const chapterSchema = new mongoose.Schema({
   subjectId: mongoose.Schema.Types.ObjectId,
-  name: String
+  name: String,
+  description: String,
+  videourl: String,
+
 });
 const progressSchema = new mongoose.Schema({
   userId: mongoose.Schema.Types.ObjectId,
@@ -30,6 +33,13 @@ const quizScoreSchema = new mongoose.Schema({
   score: Number,
   totalMarks: Number
 });
+const quizQuestionSchema = new mongoose.Schema({
+  subjectId: mongoose.Schema.Types.ObjectId,
+  chapterId: mongoose.Schema.Types.ObjectId,
+  question: String,
+  options: [String],
+  correctAnswer: String
+});
 const leaderboardSchema = new mongoose.Schema({
   userId: mongoose.Schema.Types.ObjectId,
   classnumber: Number,
@@ -42,3 +52,4 @@ mongoose.model("chapters", chapterSchema);
 mongoose.model("progress", progressSchema);
 mongoose.model("quizScores", quizScoreSchema);
 mongoose.model("leaderboards", leaderboardSchema);
+mongoose.model("quizquestions",quizQuestionSchema);
