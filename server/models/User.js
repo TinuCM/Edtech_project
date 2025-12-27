@@ -5,8 +5,9 @@ const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
-  classnumber: Number,
-  parentnumber:Number,
+  classno: Number,
+  otp:Number
+  
 });
 
     
