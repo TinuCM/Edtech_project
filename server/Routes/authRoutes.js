@@ -36,10 +36,10 @@ module.exports = (app) => {
       const { email } = req.body;
 
       //   Generate the OTP
-      const digits = "123456789";
+      const digits = "0123456789";
       let newOTP = "";
       for (let i = 0; i < otpLength; i++) {
-        newOTP += digits[Math.floor(Math.random() * 10)];
+        newOTP += digits[Math.floor(Math.random() * digits.length)];
       }
       console.log("newOTP: ", newOTP);
 
