@@ -31,8 +31,8 @@ require("./Models/Leaderboard");
 // Routes
 
 require("./Routes/authRoutes")(app); // Authentication BackEnd
-require("./Routes/ChaptersRoutes")(app); // Authentication BackEnd
-require("./Routes/SubjectRoutes")(app); // Authentication BackEnd
+require("./Routes/chaptersRoutes")(app); // Authentication BackEnd
+require("./Routes/subjectRoutes")(app); // Authentication BackEnd
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

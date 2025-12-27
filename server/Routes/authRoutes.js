@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const User = mongoose.model("edtechusers");
 const jwt = require("jsonwebtoken"); // npm i jsonwebtoken
+const sendEmail = require("../utils/sendEmail");
 
 const requireLogin = require("../middleware/requireLogin");
 
@@ -47,8 +48,13 @@ module.exports = (app) => {
 
       //   If user does exist
       if (user) {
-        const response = await User.updateOne({ email }, {$set:{ otp: newOTP }});
-        res.status(201).json({ message: "OTP Sent Successfully", response });
+        await User.updateOne({ email }, {$set:{ otp: newOTP }});
+        await sendEmail({
+        to: email,
+        subject: "Parent Login OTP",
+        text: `Your OTP to login as a parent is ${newOTP}.`,
+        });
+        res.status(200).json({ message: "OTP Sent Successfully" });
       } 
       else {
         // const response = await User.updateOne({ email }, {$set:{ otp: newOTP }});
