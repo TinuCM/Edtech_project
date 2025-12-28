@@ -1,8 +1,0 @@
-[00:00:02.429] Server  LOG      ✓ Ready in 1507ms
-[00:00:05.523] Server  LOG      ○ Compiling /parentlogin ...
-[00:00:25.474] Server  ERROR   (node:19060) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
-(Use `node --trace-deprecation ...` to show where the warning was created)
-[00:00:25.539] Browser LOG     tinucherian229@gmail.com
-[00:00:29.341] Browser LOG     {"message":"OTP Sent Successfully"}
-[00:00:48.971] Browser LOG     {"message":" Parent Login Success","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGZiZTI1Mjg4NDI1YjkxZTNiNTE1YiIsImVtYWlsIjoidGludWNoZXJpYW4yMjlAZ21haWwuY29tIiwiaWF0IjoxNzY2OTA0Nzc2LCJleHAiOjE3Njc1MDk1NzZ9.pDFLJ7rjnm2U_qGsFINiizU6Wpp212eAjcFg_qXUBCc"}
-[00:00:48.971] Browser LOG     Login successful, token stored in cookies.
