@@ -1,33 +1,55 @@
 {
   "pages": {
-    "/_app": [
-      "static/chunks/ae072_next_dist_compiled_3c34aad4._.js",
-      "static/chunks/ae072_next_dist_shared_lib_f78160e5._.js",
-      "static/chunks/ae072_next_dist_client_d6b14563._.js",
-      "static/chunks/ae072_next_dist_ba2c809d._.js",
-      "static/chunks/ae072_next_app_9244a588.js",
-      "static/chunks/[next]_entry_page-loader_ts_63972c95._.js",
-      "static/chunks/ae072_react-dom_7730b0c6._.js",
-      "static/chunks/ae072_2d3a5008._.js",
-      "static/chunks/[root-of-the-server]__0fa2fa8c._.js",
-      "static/chunks/66ff7_G10X Technology Private Limited_Desktop_edtech v1_client_src_pages__app_2da965e7._.js",
-      "static/chunks/30537_G10X Technology Private Limited_Desktop_edtech v1_client_src_pages__app_525edef8._.js"
+    "/": [
+      "static/chunks/a9aa6_next_dist_compiled_8fd7d6c8._.js",
+      "static/chunks/a9aa6_next_dist_shared_lib_3ccdcf93._.js",
+      "static/chunks/a9aa6_next_dist_client_a93f81ab._.js",
+      "static/chunks/a9aa6_next_dist_a077463d._.js",
+      "static/chunks/a9aa6_next_image_e9430e0c.js",
+      "static/chunks/a9aa6_react-dom_b965a306._.js",
+      "static/chunks/a9aa6_476873f2._.js",
+      "static/chunks/[root-of-the-server]__6bab5eab._.js",
+      "static/chunks/[next]_internal_font_google_91a4ca6b._.css",
+      "static/chunks/b39b9_echnology Private Limited_Desktop_Edtech_project_client_src_pages_index_2da965e7._.js",
+      "static/chunks/66530_echnology Private Limited_Desktop_Edtech_project_client_src_pages_index_07b30495._.js"
     ],
-    "/parentlogin": [
-      "static/chunks/ae072_next_dist_compiled_e408e58a._.js",
-      "static/chunks/ae072_next_dist_shared_lib_3e7d3416._.js",
-      "static/chunks/ae072_next_dist_client_d6b14563._.js",
-      "static/chunks/ae072_next_dist_a5b4651a._.js",
-      "static/chunks/ae072_next_head_f0197a36.js",
-      "static/chunks/ae072_react-dom_7730b0c6._.js",
-      "static/chunks/ae072_@mui_system_esm_cc204915._.js",
-      "static/chunks/ae072_@mui_material_esm_styles_c432c681._.js",
-      "static/chunks/ae072_@mui_material_esm_408ccf31._.js",
-      "static/chunks/ae072_axios_lib_c9e5ccdf._.js",
-      "static/chunks/ae072_3e44df12._.js",
-      "static/chunks/[root-of-the-server]__7dd1a022._.js",
-      "static/chunks/3ceef_chnology Private Limited_Desktop_edtech v1_client_src_pages_parentlogin_2da965e7._.js",
-      "static/chunks/a901b_chnology Private Limited_Desktop_edtech v1_client_src_pages_parentlogin_4877cbfd._.js"
+    "/_app": [
+      "static/chunks/a9aa6_next_dist_compiled_3c5d2cc2._.js",
+      "static/chunks/a9aa6_next_dist_shared_lib_4b58b180._.js",
+      "static/chunks/a9aa6_next_dist_client_2e11f961._.js",
+      "static/chunks/a9aa6_next_dist_a077463d._.js",
+      "static/chunks/a9aa6_react-dom_b965a306._.js",
+      "static/chunks/a9aa6_476873f2._.js",
+      "static/chunks/[root-of-the-server]__d6ea7fad._.js",
+      "static/chunks/fae82_nology Private Limited_Desktop_Edtech_project_client_src_styles_globals_e12780af.css",
+      "static/chunks/c3734_Technology Private Limited_Desktop_Edtech_project_client_src_pages__app_2da965e7._.js",
+      "static/chunks/3f957_Technology Private Limited_Desktop_Edtech_project_client_src_pages__app_9304295e._.js"
+    ],
+    "/_error": [
+      "static/chunks/a9aa6_next_dist_compiled_3c5d2cc2._.js",
+      "static/chunks/a9aa6_next_dist_shared_lib_4fd214a3._.js",
+      "static/chunks/a9aa6_next_dist_client_2e11f961._.js",
+      "static/chunks/a9aa6_next_dist_1bcf8f86._.js",
+      "static/chunks/a9aa6_next_error_5d94c232.js",
+      "static/chunks/[next]_entry_page-loader_ts_901ac3d0._.js",
+      "static/chunks/a9aa6_react-dom_b965a306._.js",
+      "static/chunks/a9aa6_0d7a2924._.js",
+      "static/chunks/[root-of-the-server]__89ead597._.js",
+      "static/chunks/3ceef_chnology Private Limited_Desktop_Edtech_project_client_src_pages__error_2da965e7._.js",
+      "static/chunks/a901b_chnology Private Limited_Desktop_Edtech_project_client_src_pages__error_381594c7._.js"
+    ],
+    "/learn": [
+      "static/chunks/a9aa6_next_dist_compiled_8fd7d6c8._.js",
+      "static/chunks/a9aa6_next_dist_shared_lib_3ccdcf93._.js",
+      "static/chunks/a9aa6_next_dist_client_a93f81ab._.js",
+      "static/chunks/a9aa6_next_dist_a077463d._.js",
+      "static/chunks/a9aa6_next_b185208b._.js",
+      "static/chunks/a9aa6_react-dom_b965a306._.js",
+      "static/chunks/a9aa6_476873f2._.js",
+      "static/chunks/[root-of-the-server]__62d6ae01._.js",
+      "static/chunks/ee988_Desktop_Edtech_project_client_src_styles_Learn_module_348da2b5.css",
+      "static/chunks/b39b9_echnology Private Limited_Desktop_Edtech_project_client_src_pages_learn_2da965e7._.js",
+      "static/chunks/66530_echnology Private Limited_Desktop_Edtech_project_client_src_pages_learn_6e7544cb._.js"
     ]
   },
   "devFiles": [],

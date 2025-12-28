@@ -1,13 +1,13 @@
 __turbopack_load_page_chunks__("/_error", [
-  "static/chunks/ae072_next_dist_compiled_3c34aad4._.js",
-  "static/chunks/ae072_next_dist_shared_lib_3e7d3416._.js",
-  "static/chunks/ae072_next_dist_client_d6b14563._.js",
-  "static/chunks/ae072_next_dist_80c8ac80._.js",
-  "static/chunks/ae072_next_error_8c2c0cb6.js",
-  "static/chunks/[next]_entry_page-loader_ts_4a78428a._.js",
-  "static/chunks/ae072_react-dom_7730b0c6._.js",
-  "static/chunks/ae072_2d3a5008._.js",
-  "static/chunks/[root-of-the-server]__88998438._.js",
-  "static/chunks/6f6b8_0X Technology Private Limited_Desktop_edtech v1_client_src_pages__error_2da965e7._.js",
-  "static/chunks/02b25_0X Technology Private Limited_Desktop_edtech v1_client_src_pages__error_a4b97e24._.js"
+  "static/chunks/a9aa6_next_dist_compiled_3c5d2cc2._.js",
+  "static/chunks/a9aa6_next_dist_shared_lib_4fd214a3._.js",
+  "static/chunks/a9aa6_next_dist_client_2e11f961._.js",
+  "static/chunks/a9aa6_next_dist_1bcf8f86._.js",
+  "static/chunks/a9aa6_next_error_5d94c232.js",
+  "static/chunks/[next]_entry_page-loader_ts_901ac3d0._.js",
+  "static/chunks/a9aa6_react-dom_b965a306._.js",
+  "static/chunks/a9aa6_0d7a2924._.js",
+  "static/chunks/[root-of-the-server]__89ead597._.js",
+  "static/chunks/3ceef_chnology Private Limited_Desktop_Edtech_project_client_src_pages__error_2da965e7._.js",
+  "static/chunks/a901b_chnology Private Limited_Desktop_Edtech_project_client_src_pages__error_381594c7._.js"
 ])

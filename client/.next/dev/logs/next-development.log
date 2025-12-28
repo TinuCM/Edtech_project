@@ -1,8 +1,1292 @@
-[00:00:02.429] Server  LOG      ✓ Ready in 1507ms
-[00:00:05.523] Server  LOG      ○ Compiling /parentlogin ...
-[00:00:25.474] Server  ERROR   (node:19060) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
-(Use `node --trace-deprecation ...` to show where the warning was created)
-[00:00:25.539] Browser LOG     tinucherian229@gmail.com
-[00:00:29.341] Browser LOG     {"message":"OTP Sent Successfully"}
-[00:00:48.971] Browser LOG     {"message":" Parent Login Success","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGZiZTI1Mjg4NDI1YjkxZTNiNTE1YiIsImVtYWlsIjoidGludWNoZXJpYW4yMjlAZ21haWwuY29tIiwiaWF0IjoxNzY2OTA0Nzc2LCJleHAiOjE3Njc1MDk1NzZ9.pDFLJ7rjnm2U_qGsFINiizU6Wpp212eAjcFg_qXUBCc"}
-[00:00:48.971] Browser LOG     Login successful, token stored in cookies.
+[00:00:02.137] Server  LOG      ✓ Ready in 1363ms
+[00:00:09.443] Browser WARN    Image with src "/_next/static/media/GroupAnimals.ea90fe28.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:09.443] Browser WARN    Image with src "/_next/static/media/dogs.a8c966fa.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:59.951] Server  LOG      ✓ Compiled in 17ms
+[00:06:21.929] Server  LOG      ✓ Compiled in 129ms
+[00:06:51.747] Server  LOG      ✓ Compiled in 96ms
+[00:06:51.900] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\.next\dev\server\chunks\ssr\[root-of-the-server]__d8678b8e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:51.904] Server  ERROR   ReferenceError: Hero is not defined
+[00:06:51.911] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\.next\dev\server\chunks\ssr\[root-of-the-server]__d8678b8e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:51.912] Server  ERROR    ⨯ ReferenceError: Hero is not defined
+[00:06:51.914] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\.next\dev\server\chunks\ssr\[root-of-the-server]__d8678b8e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:51.914] Server  ERROR    ⨯ ReferenceError: Hero is not defined
+[00:06:52.532] Browser ERROR   %o
+
+%s
+
+%s
+ {} The above error occurred in the <App> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:06:52.732] Browser ERROR   uncaughtError: ReferenceError: Hero is not defined
+[00:06:58.312] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:06:58.322] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:06:58.338] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:06:58.352] Server  LOG      ✓ Compiled in 52ms
+[00:07:55.400] Browser ERROR   %o
+
+%s
+
+%s
+ {} The above error occurred in the <App> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:08:00.182] Browser WARN    Image with src "/_next/static/media/GroupAnimals.ea90fe28.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:08:00.183] Browser WARN    Image with src "/_next/static/media/dogs.a8c966fa.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:14:36.579] Server  LOG      ✓ Compiled in 83ms
+[00:14:50.256] Server  LOG      ✓ Compiled in 65ms
+[00:15:02.616] Server  LOG      ✓ Compiled in 52ms
+[00:15:03.389] Browser LOG     Refreshing page data due to server-side change
+[00:15:03.389] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:13
+Parsing ecmascript source code failed
+  1 | return (
+  2 |   <div className={styles.videoContainer}>
+> 3 |     <iframe ...></iframe>
+    |             ^^^
+  4 |   </div>
+  5 | );
+  6 |
+
+Expected '</', got '...'
+[00:15:04.404] Server  LOG      ✓ Compiled in 27ms
+[00:15:05.403] Browser LOG     Refreshing page data due to server-side change
+[00:15:27.816] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\.next\dev\server\chunks\ssr\[root-of-the-server]__6c86c07f._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:15:27.817] Server  ERROR   ReferenceError: Hero is not defined
+[00:15:27.821] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\.next\dev\server\chunks\ssr\[root-of-the-server]__6c86c07f._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:15:27.822] Server  ERROR    ⨯ ReferenceError: Hero is not defined
+[00:15:27.830] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\.next\dev\server\chunks\ssr\[root-of-the-server]__6c86c07f._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:15:27.833] Server  ERROR    ⨯ ReferenceError: Hero is not defined
+[00:15:28.270] Browser ERROR   uncaughtError: ReferenceError: Hero is not defined
+[00:16:00.142] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:16:00.176] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:16:00.337] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\.next\dev\server\chunks\ssr\[root-of-the-server]__0919e586._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:16:00.338] Server  ERROR   ReferenceError: Hero is not defined
+[00:16:00.341] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\.next\dev\server\chunks\ssr\[root-of-the-server]__0919e586._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:16:00.342] Server  ERROR    ⨯ ReferenceError: Hero is not defined
+[00:16:00.348] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\.next\dev\server\chunks\ssr\[root-of-the-server]__0919e586._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:16:00.349] Server  ERROR    ⨯ ReferenceError: Hero is not defined
+[00:16:00.353] Server  LOG      ✓ Compiled in 46ms
+[00:16:00.461] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\.next\dev\server\chunks\ssr\[root-of-the-server]__0919e586._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:16:00.461] Server  ERROR   ReferenceError: Hero is not defined
+[00:16:00.465] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\.next\dev\server\chunks\ssr\[root-of-the-server]__0919e586._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:16:00.465] Server  ERROR    ⨯ ReferenceError: Hero is not defined
+[00:16:00.468] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\.next\dev\server\chunks\ssr\[root-of-the-server]__0919e586._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:16:00.469] Server  ERROR    ⨯ ReferenceError: Hero is not defined
+[00:16:00.806] Browser ERROR   uncaughtError: ReferenceError: Hero is not defined
+[00:16:40.141] Server  LOG      ✓ Compiled in 69ms
+[00:16:47.621] Browser WARN    Image with src "/_next/static/media/GroupAnimals.ea90fe28.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:16:47.621] Browser WARN    Image with src "/_next/static/media/dogs.a8c966fa.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:16:59.209] Browser ERROR   %o
+
+%s
+
+%s
+ {} The above error occurred in the <Home> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:16:59.209] Browser ERROR   %o
+
+%s
+
+%s
+ {} The above error occurred in the <Home> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:16:59.209] Browser WARN    Unexpected import of module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/match-local-pattern.js [client] (ecmascript) from module [project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/shared/lib/image-loader.js [client] (ecmascript), which was deleted by an HMR update
+[00:20:08.598] Server  LOG      ✓ Compiled in 50ms
+[00:20:36.301] Server  LOG      ✓ Compiled in 53ms
+[00:22:29.731] Server  LOG      ✓ Compiled in 48ms
+[00:22:40.276] Server  LOG      ✓ Compiled in 39ms
+[00:22:42.998] Server  LOG      ✓ Compiled in 15ms
+[00:24:32.352] Server  LOG      ✓ Compiled in 13ms
+[00:26:30.688] Server  LOG      ✓ Compiled in 38ms
+[00:26:31.391] Browser LOG     Refreshing page data due to server-side change
+[00:27:26.709] Server  LOG      ✓ Compiled in 22ms
+[00:27:33.391] Browser LOG     Refreshing page data due to server-side change
+[00:28:03.131] Server  LOG      ✓ Compiled in 1169ms
+[00:32:05.931] Server  LOG      ✓ Compiled in 9ms
+[00:32:34.339] Server  LOG      ✓ Compiled in 42ms
+[00:32:35.831] Server  LOG      ✓ Compiled in 35ms
+[00:32:36.400] Browser LOG     Refreshing page data due to server-side change
+[00:32:36.400] Browser LOG     Refreshing page data due to server-side change
+[00:32:52.942] Server  LOG      ✓ Compiled in 12ms
+[00:34:22.462] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const VIDEO_MAP = {
+  6 |   "1-one": "d0yGdNEWdn0",
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:22.464] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const VIDEO_MAP = {
+  6 |   "1-one": "d0yGdNEWdn0",
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:22.465] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const VIDEO_MAP = {
+  6 |   "1-one": "d0yGdNEWdn0",
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:22.466] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const VIDEO_MAP = {
+  6 |   "1-one": "d0yGdNEWdn0",
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:22.468] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const VIDEO_MAP = {
+  6 |   "1-one": "d0yGdNEWdn0",
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:22.469] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const VIDEO_MAP = {
+  6 |   "1-one": "d0yGdNEWdn0",
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:22.470] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const VIDEO_MAP = {
+  6 |   "1-one": "d0yGdNEWdn0",
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:22.472] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const VIDEO_MAP = {
+  6 |   "1-one": "d0yGdNEWdn0",
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:22.503] Server  LOG      ✓ Compiled in 44ms
+[00:34:25.439] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const VIDEO_MAP = {
+  6 |   "1-one": "d0yGdNEWdn0",
+
+https://nextjs.org/docs/messages/module-not-found
+[00:34:25.439] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const VIDEO_MAP = {
+  6 |   "1-one": "d0yGdNEWdn0",
+
+https://nextjs.org/docs/messages/module-not-found
+[00:34:25.439] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const VIDEO_MAP = {
+  6 |   "1-one": "d0yGdNEWdn0",
+
+https://nextjs.org/docs/messages/module-not-found
+[00:34:27.114] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:27.116] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:27.118] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:27.118] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:27.119] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:27.121] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:27.121] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:27.122] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:27.148] Server  LOG      ✓ Compiled in 33ms
+[00:34:28.397] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '../public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "../public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:34:34.586] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..page/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..page/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:34.600] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..page/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..page/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:34.606] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..page/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..page/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:34.611] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..page/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..page/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:34.621] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..page/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..page/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:34.622] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..page/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..page/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:34.623] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..page/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..page/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:34.623] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..page/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..page/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:34.626] Server  LOG      ✓ Compiled in 178ms
+[00:34:35.809] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:35.809] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:35.810] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:35.811] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:35.812] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:35.813] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:35.814] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:35.814] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:35.848] Server  LOG      ✓ Compiled in 13ms
+[00:34:41.029] Server  LOG      ✓ Compiled in 34ms
+[00:34:43.209] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..page/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..page/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:34:43.209] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import dogImage from "../pages/public/dogs.png";
+  6 | const VIDEO_MAP = {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:34:43.209] Browser LOG     Refreshing page data due to server-side change
+[00:34:45.311] Server  LOG      ✓ Compiled in 29ms
+[00:34:46.392] Browser LOG     Refreshing page data due to server-side change
+[00:35:00.547] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve 'pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:00.548] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve 'pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:00.549] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve 'pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:00.550] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve 'pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:00.552] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve 'pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:00.553] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve 'pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:00.555] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve 'pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:00.564] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve 'pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:00.592] Server  LOG      ✓ Compiled in 26ms
+[00:35:02.390] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve 'pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:35:02.390] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve 'pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:35:02.390] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve 'pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:35:14.249] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:14.250] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:14.251] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:14.252] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:14.253] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:14.254] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:14.254] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:14.255] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:14.338] Server  LOG      ✓ Compiled in 15ms
+[00:35:15.436] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:3:1
+Module not found: Can't resolve '..pages/public/logo.png'
+  1 | import { useRouter } from "next/router";
+  2 | import styles from "../styles/Learn.module.css";
+> 3 | import logo from "..pages/public/logo.png";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 |
+  6 | const VIDEO_MAP = {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:35:16.281] Server  LOG      ✓ Compiled in 34ms
+[00:36:43.694] Server  LOG      ✓ Compiled in 11ms
+[00:44:00.888] Server  LOG      ✓ Compiled in 167ms
+[00:44:01.535] Browser LOG     Refreshing page data due to server-side change
+[00:44:18.329] Server  LOG      ✓ Compiled in 14ms
+[00:44:24.559] Server  LOG      ✓ Compiled in 24ms
+[00:44:25.673] Server  LOG      ✓ Compiled in 12ms
+[00:44:26.394] Browser LOG     Refreshing page data due to server-side change
+[00:44:26.394] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:45:1
+Parsing ecmascript source code failed
+  43 |   );
+  44 | }
+> 45 | /
+     | ^
+
+Unterminated regexp literal
+[00:44:26.394] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:45:1
+Parsing ecmascript source code failed
+  43 |   );
+  44 | }
+> 45 | /
+     | ^
+
+Unterminated regexp literal
+[00:44:26.394] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:45:1
+Parsing ecmascript source code failed
+  43 |   );
+  44 | }
+> 45 | /
+     | ^
+
+Unterminated regexp literal
+[00:44:26.394] Browser LOG     Refreshing page data due to server-side change
+[00:49:25.028] Server  LOG      ✓ Compiled in 20ms
+[00:50:31.808] Server  LOG      ✓ Compiled in 34ms
+[00:50:38.158] Server  LOG      ✓ Compiled in 37ms
+[00:50:41.578] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:31:15
+Parsing ecmascript source code failed
+  29 |     <div className={styles.learnPage}>
+  30 |    </div>
+> 31 |          <nav className="navbar">
+     |               ^^^^^^^^^
+  32 |          <div className="navbar-logo">
+  33 |            <Image src={logo} alt="Study Pilot Logo" height={45} />
+  34 |            <span></span>
+
+Expected ',', got 'className'
+[00:50:41.578] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:31:15
+Parsing ecmascript source code failed
+  29 |     <div className={styles.learnPage}>
+  30 |    </div>
+> 31 |          <nav className="navbar">
+     |               ^^^^^^^^^
+  32 |          <div className="navbar-logo">
+  33 |            <Image src={logo} alt="Study Pilot Logo" height={45} />
+  34 |            <span></span>
+
+Expected ',', got 'className'
+[00:50:41.578] Browser LOG     Refreshing page data due to server-side change
+[00:50:41.578] Browser ERROR   %o
+
+%s
+
+%s
+ {"message":"Failed to construct 'Image': Please use the 'new' operator, this DOM object constructor cannot be called as a function."} The above error occurred in the <Image> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:50:50.010] Browser ERROR   %o
+
+%s
+
+%s
+ {"message":"Failed to construct 'Image': Please use the 'new' operator, this DOM object constructor cannot be called as a function."} The above error occurred in the <Image> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:52:48.307] Server  LOG      ✓ Compiled in 20ms
+[00:52:50.401] Server  LOG      ✓ Compiled in 22ms
+[00:52:59.701] Browser ERROR   %o
+
+%s
+
+%s
+ {"message":"Failed to construct 'Image': Please use the 'new' operator, this DOM object constructor cannot be called as a function."} The above error occurred in the <Image> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:55:16.615] Server  LOG      ✓ Compiled in 123ms
+[00:55:56.974] Server  LOG      ✓ Compiled in 27ms
+[00:55:58.431] Browser LOG     Refreshing page data due to server-side change
+[00:55:58.431] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:47:1
+Parsing ecmascript source code failed
+  45 |     </div>
+  46 |   );
+> 47 | }
+     | ^
+  48 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:55:58.431] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:47:1
+Parsing ecmascript source code failed
+  45 |     </div>
+  46 |   );
+> 47 | }
+     | ^
+  48 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:55:58.431] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:47:1
+Parsing ecmascript source code failed
+  45 |     </div>
+  46 |   );
+> 47 | }
+     | ^
+  48 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:56:00.690] Server  LOG      ✓ Compiled in 20ms
+[00:56:02.739] Server  LOG      ✓ Compiled in 6ms
+[00:56:04.935] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:36:12
+Parsing ecmascript source code failed
+  34 |
+  35 |
+> 36 |       <div className={styles.videoContainer}>
+     |            ^^^^^^^^^
+  37 |         <iframe
+  38 |           src={`https://www.youtube.com/embed/${videoId}`}
+  39 |           title="Learning Video"
+
+Expected ',', got 'className'
+[00:56:04.935] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/learn.js:47:1
+Parsing ecmascript source code failed
+  45 |     </div>
+  46 |   );
+> 47 | }
+     | ^
+  48 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:56:07.127] Server  LOG      ✓ Compiled in 29ms
+[00:56:07.532] Browser LOG     Refreshing page data due to server-side change
+[00:56:13.734] Browser WARN    Image with src "/_next/static/media/logo.e26671d9.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:58:41.899] Server  LOG      ✓ Compiled in 37ms
+[00:58:42.640] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\.next\dev\server\chunks\ssr\[root-of-the-server]__6d04dea3._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:42.644] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\.next\dev\server\chunks\ssr\[turbopack]_runtime.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:42.653] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\node_modules\next\dist\server\require-hook.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:42.655] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\node_modules\next\dist\server\require.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:42.656] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\node_modules\next\dist\server\load-components.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:42.665] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:42.667] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:42.672] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:42.680] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:42.682] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:42.683] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:42.684] Server  ERROR   C:\Users\MannaOleeviyaShaji(G\OneDrive - G10X Technology Private Limited\Desktop\Edtech_project\client\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:42.686] Server  ERROR    ⨯ Error: Could not parse module '[project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/_document.js'
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:58:43.091] Browser LOG     Refreshing page data due to server-side change
+[00:58:43.158] Browser ERROR   uncaughtError: Error: ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/_document.js:13:1
+Parsing ecmascript source code failed
+  11 |     </Html>
+  12 |   );
+> 13 | }
+     | ^
+  14 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+
+[00:58:43.413] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/_document.js:13:1
+Parsing ecmascript source code failed
+  11 |     </Html>
+  12 |   );
+> 13 | }
+     | ^
+  14 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:58:43.413] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/_document.js:13:1
+Parsing ecmascript source code failed
+  11 |     </Html>
+  12 |   );
+> 13 | }
+     | ^
+  14 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:58:43.413] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/_document.js:13:1
+Parsing ecmascript source code failed
+  11 |     </Html>
+  12 |   );
+> 13 | }
+     | ^
+  14 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:58:43.413] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/_document.js:13:1
+Parsing ecmascript source code failed
+  11 |     </Html>
+  12 |   );
+> 13 | }
+     | ^
+  14 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:58:43.800] Browser ERROR   uncaughtError: Error: ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/_document.js:13:1
+Parsing ecmascript source code failed
+  11 |     </Html>
+  12 |   );
+> 13 | }
+     | ^
+  14 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+
+[00:58:43.989] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/_document.js:13:1
+Parsing ecmascript source code failed
+  11 |     </Html>
+  12 |   );
+> 13 | }
+     | ^
+  14 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:58:43.989] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/_document.js:13:1
+Parsing ecmascript source code failed
+  11 |     </Html>
+  12 |   );
+> 13 | }
+     | ^
+  14 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:58:43.989] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/_document.js:13:1
+Parsing ecmascript source code failed
+  11 |     </Html>
+  12 |   );
+> 13 | }
+     | ^
+  14 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:58:43.989] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/_document.js:13:1
+Parsing ecmascript source code failed
+  11 |     </Html>
+  12 |   );
+> 13 | }
+     | ^
+  14 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:58:44.395] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/_document.js:13:1
+Parsing ecmascript source code failed
+  11 |     </Html>
+  12 |   );
+> 13 | }
+     | ^
+  14 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:58:44.678] Server  LOG      ✓ Compiled in 33ms
+[00:58:45.859] Browser WARN    Image with src "/_next/static/media/logo.e26671d9.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:58:47.191] Server  LOG      ✓ Compiled in 19ms
+[00:58:48.919] Browser LOG     Refreshing page data due to server-side change
+[00:58:51.544] Browser WARN    Image with src "/_next/static/media/logo.e26671d9.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:59:26.349] Server  LOG      ✓ Compiled in 14ms
+[00:59:27.925] Browser LOG     Refreshing page data due to server-side change
+[00:59:30.396] Browser WARN    Image with src "/_next/static/media/logo.e26671d9.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:59:52.296] Server  LOG      ✓ Compiled in 13ms
+[00:59:56.408] Browser LOG     Refreshing page data due to server-side change
+[01:00:00.518] Browser WARN    Image with src "/_next/static/media/logo.e26671d9.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[01:00:15.431] Server  LOG      ✓ Compiled in 39ms
+[01:00:58.010] Server  LOG      ✓ Compiled in 17ms
+[01:02:05.808] Server  LOG      ✓ Compiled in 6ms
+[01:02:11.538] Server  LOG      ✓ Compiled in 5ms
+[01:02:13.041] Server  LOG      ✓ Compiled in 21ms
+[01:02:28.402] Server  LOG      ✓ Compiled in 5ms
+[01:02:33.820] Browser WARN    Image with src "/_next/static/media/logo.e26671d9.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[01:03:13.246] Server  LOG      ✓ Compiled in 6ms
+[01:03:24.453] Server  LOG      ✓ Compiled in 14ms
+[01:03:25.887] Server  LOG      ✓ Compiled in 11ms
+[01:03:29.123] Server  LOG      ✓ Compiled in 6ms
+[01:04:12.557] Server  LOG      ✓ Compiled in 10ms
+[01:04:17.944] Browser WARN    Image with src "/_next/static/media/logo.e26671d9.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[01:04:27.234] Server  LOG      ✓ Compiled in 9ms
+[01:04:29.524] Server  LOG      ✓ Compiled in 5ms
+[01:04:32.483] Server  LOG      ✓ Compiled in 9ms
+[01:04:33.586] Server  LOG      ✓ Compiled in 6ms
+[01:04:58.850] Server  LOG      ✓ Compiled in 22ms
+[01:05:00.161] Server  LOG      ✓ Compiled in 4ms
+[01:05:32.003] Server  LOG      ✓ Compiled in 35ms
+[01:05:33.931] Server  LOG      ✓ Compiled in 5ms
+[01:05:37.212] Server  LOG      ✓ Compiled in 4ms
+[01:05:40.684] Server  LOG      ✓ Compiled in 12ms
+[01:05:51.250] Browser WARN    Image with src "/_next/static/media/logo.e26671d9.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[01:06:23.503] Server  LOG      ✓ Compiled in 9ms
+[01:06:24.751] Server  LOG      ✓ Compiled in 8ms
+[01:06:27.542] Server  LOG      ✓ Compiled in 4ms
+[01:06:31.482] Browser WARN    Image with src "/_next/static/media/logo.e26671d9.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[01:06:44.015] Server  LOG      ✓ Compiled in 7ms
+[01:06:47.521] Server  LOG      ✓ Compiled in 12ms
+[01:06:50.576] Server  LOG      ✓ Compiled in 30ms
+[01:07:06.073] Server  LOG      ✓ Compiled in 18ms
+[01:07:08.477] Server  LOG      ✓ Compiled in 5ms
+[01:07:10.927] Server  LOG      ✓ Compiled in 5ms
+[01:07:16.097] Server  LOG      ✓ Compiled in 9ms
+[01:07:58.705] Browser WARN    Image with src "/_next/static/media/GroupAnimals.ea90fe28.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:07:58.705] Browser WARN    Image with src "/_next/static/media/dogs.a8c966fa.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:08:47.170] Server  LOG      ✓ Compiled in 6ms
+[01:09:27.407] Server  LOG      ✓ Compiled in 7ms
+[01:09:38.755] Browser WARN    Image with src "/_next/static/media/logo.e26671d9.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[01:09:44.289] Server  LOG      ✓ Compiled in 9ms
+[01:09:46.918] Browser WARN    Image with src "/_next/static/media/logo.e26671d9.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[01:09:54.214] Server  LOG      ✓ Compiled in 116ms

@@ -1,6 +1,14 @@
 {
   "app": {},
   "appUsingSizeAdjust": false,
-  "pages": {},
-  "pagesUsingSizeAdjust": false
+  "pages": {
+    "/": [
+      "static/media/85d221305b371308-s.p.8d6bf448.woff2",
+      "static/media/a218039a3287bcfd-s.p.4a23d71b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.3aec397d.woff2",
+      "static/media/e2334d715941921e-s.p.d82a9aff.woff2",
+      "static/media/3e185f0c9c3d9cda-s.p.5799f585.woff2"
+    ]
+  },
+  "pagesUsingSizeAdjust": true
 }
