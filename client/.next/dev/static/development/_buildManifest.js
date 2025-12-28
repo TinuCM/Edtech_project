@@ -1,9 +1,6 @@
 self.__BUILD_MANIFEST = {
-  "/_error": [
-    "static/chunks/pages/_error.js"
-  ],
-  "/login": [
-    "static/chunks/pages/login.js"
+  "/parentlogin": [
+    "static/chunks/pages/parentlogin.js"
   ],
   "__rewrites": {
     "afterFiles": [
@@ -17,6 +14,6 @@ self.__BUILD_MANIFEST = {
   "sortedPages": [
     "/_app",
     "/_error",
-    "/login"
+    "/parentlogin"
   ]
 };self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()

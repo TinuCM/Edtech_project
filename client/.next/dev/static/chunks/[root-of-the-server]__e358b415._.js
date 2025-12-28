@@ -515,6 +515,8 @@ const Login = ()=>{
             //   cookies.set("user", JSON.stringify(response.data.user));
             console.log("Login successful, token stored in cookies.");
         // window.location.href = "/";
+        } else if (response.status === 400) {
+            console.log("OTP verification failed.");
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__G10X__Technology__Private__Limited$2f$Desktop$2f$edtech__v1$2f$client$2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__G10X__Technology__Private__Limited$2f$Desktop$2f$edtech__v1$2f$client$2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Box$2f$Box$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__["Box"], {
@@ -529,12 +531,12 @@ const Login = ()=>{
                     children: "Login"
                 }, void 0, false, {
                     fileName: "[project]/OneDrive - G10X Technology Private Limited/Desktop/edtech v1/client/src/components/common/Login.js",
-                    lineNumber: 41,
+                    lineNumber: 44,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__G10X__Technology__Private__Limited$2f$Desktop$2f$edtech__v1$2f$client$2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                     fileName: "[project]/OneDrive - G10X Technology Private Limited/Desktop/edtech v1/client/src/components/common/Login.js",
-                    lineNumber: 42,
+                    lineNumber: 45,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__G10X__Technology__Private__Limited$2f$Desktop$2f$edtech__v1$2f$client$2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__G10X__Technology__Private__Limited$2f$Desktop$2f$edtech__v1$2f$client$2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Box$2f$Box$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__["Box"], {
@@ -553,7 +555,7 @@ const Login = ()=>{
                                 value: otp
                             }, void 0, false, {
                                 fileName: "[project]/OneDrive - G10X Technology Private Limited/Desktop/edtech v1/client/src/components/common/Login.js",
-                                lineNumber: 46,
+                                lineNumber: 49,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__G10X__Technology__Private__Limited$2f$Desktop$2f$edtech__v1$2f$client$2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__G10X__Technology__Private__Limited$2f$Desktop$2f$edtech__v1$2f$client$2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Button$2f$Button$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
@@ -562,7 +564,7 @@ const Login = ()=>{
                                 children: "Login"
                             }, void 0, false, {
                                 fileName: "[project]/OneDrive - G10X Technology Private Limited/Desktop/edtech v1/client/src/components/common/Login.js",
-                                lineNumber: 53,
+                                lineNumber: 56,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
@@ -576,7 +578,7 @@ const Login = ()=>{
                                 value: email
                             }, void 0, false, {
                                 fileName: "[project]/OneDrive - G10X Technology Private Limited/Desktop/edtech v1/client/src/components/common/Login.js",
-                                lineNumber: 59,
+                                lineNumber: 62,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__G10X__Technology__Private__Limited$2f$Desktop$2f$edtech__v1$2f$client$2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__G10X__Technology__Private__Limited$2f$Desktop$2f$edtech__v1$2f$client$2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Button$2f$Button$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
@@ -586,25 +588,25 @@ const Login = ()=>{
                                 children: "Send OTP"
                             }, void 0, false, {
                                 fileName: "[project]/OneDrive - G10X Technology Private Limited/Desktop/edtech v1/client/src/components/common/Login.js",
-                                lineNumber: 66,
+                                lineNumber: 69,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "[project]/OneDrive - G10X Technology Private Limited/Desktop/edtech v1/client/src/components/common/Login.js",
-                    lineNumber: 43,
+                    lineNumber: 46,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/OneDrive - G10X Technology Private Limited/Desktop/edtech v1/client/src/components/common/Login.js",
-            lineNumber: 40,
+            lineNumber: 43,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/OneDrive - G10X Technology Private Limited/Desktop/edtech v1/client/src/components/common/Login.js",
-        lineNumber: 39,
+        lineNumber: 42,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

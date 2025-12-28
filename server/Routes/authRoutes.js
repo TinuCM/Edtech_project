@@ -91,6 +91,9 @@ module.exports = (app) => {
         res.status(200).json({ message: " Parent Login Success", token });
         // console.log("Verify OTP 6");
       }
+      // else{
+      //   res.status(400).json({ message: "Invalid OTP" });
+      // }
     } catch (error) {
       console.log(error);
       res.status(500).send({ message: error.message });
