@@ -1,6 +1,8 @@
 import Image from "next/image";
-import myImage from "./public/Group 34.png";
-import logo from "./public/logo.png";
+import myImage from "../public/Group 34.png";
+import logo from "../public/logo.png";
+import Link from "next/link";
+
 import { Alfa_Slab_One, Poppins, Alegreya } from "next/font/google";
 const alfaSlab = Alfa_Slab_One({
   weight: "400",
@@ -53,7 +55,12 @@ export default function Home() {
           cultivating your child’s
           educational journey.
         </p>
-       <button className="getStarted-btn font-jsMath">GET STARTED</button>
+       <Link href="/CreateAccount">
+  <button className="getStarted-btn font-jsMath">
+    GET STARTED
+  </button>
+</Link>
+
         
       </div>
     </section>

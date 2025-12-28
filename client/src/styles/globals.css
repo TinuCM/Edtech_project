@@ -279,3 +279,160 @@ a {
 .clouds img {
   object-fit: cover;
 }
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  background:#0B91FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 40px; */
+}
+
+.card {
+  background: #ffffff;
+
+  width: 90vw;
+  max-width: 1100px;
+
+  height: auto;
+  max-height: calc(100vh - 64px); /* ALWAYS stays inside viewport */
+
+  border-radius: 25px;
+  padding: 32px;
+
+  overflow:visible; /* no internal scroll */
+}
+
+.no-scroll-page {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #0B91FF;
+}
+
+/* Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.back-btn {
+  background: none;
+  border:none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Content */
+.card-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+
+.image-section img {
+  width: 400px;
+}
+.header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.card-header {
+  justify-content: flex-start;
+}
+
+.back-btn {
+  font-size: 20px;
+  color: #333;
+  padding: 0;
+}
+
+/* Form */
+.form-section {
+  flex: 1;
+  max-width: 658px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* ✅ enforce form width */
+}
+
+
+.form-section h1 {
+  font-size: 26px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.form-section label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+
+.form-section input {
+  width: 100%;
+  max-width: 658px;   /* ✅ width = 658 */
+  height: 52px;       /* ✅ height = 66 */
+
+  padding: 0 18px;    /* vertical padding removed since height is fixed */
+  margin-bottom: 12px;
+
+  border-radius: 10px;
+  border: 1px solid #cfcfcf;
+  font-size: 15px;
+}
+.primary-btn {
+  width: 100%;
+  max-width: 658px;
+  height: 52px;
+
+  background: #000000;
+  color: #ffffff;
+
+  border-radius: 12px;
+  border: none;
+
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+  margin-top: 10px;
+}
+
+
+.signin-text {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.signin-text span {
+  color: #0066ff;
+  cursor: pointer;
+}
+.gif-image {
+  width: 280px;
+  height: auto;
+  object-fit: contain;
+}

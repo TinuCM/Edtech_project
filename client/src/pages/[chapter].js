@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import logo from '../../public/logo.png';
-import backgroundImage from '../../public/Backgroundicons.png';
+import logo from '../public/logo.png';
+import backgroundImage from '../public/Backgroundicons.png';
 import { Poppins, Irish_Grover } from 'next/font/google';
 
 const poppins = Poppins({
