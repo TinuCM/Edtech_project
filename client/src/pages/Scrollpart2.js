@@ -1,5 +1,6 @@
 import Image from "next/image";
 import dogImage from "../pages/public/dogs.png";
+// import {Home} from "../styles/Home.module.css";
  // place your dog image in public folder
  import { Alfa_Slab_One, Poppins, Alegreya } from "next/font/google";
  const alfaSlab = Alfa_Slab_One({
