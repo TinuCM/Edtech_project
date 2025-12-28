@@ -1,6 +1,6 @@
 self.__BUILD_MANIFEST = {
-  "/_error": [
-    "static/chunks/pages/_error.js"
+  "/": [
+    "static/chunks/pages/index.js"
   ],
   "/login": [
     "static/chunks/pages/login.js"
@@ -15,8 +15,13 @@ self.__BUILD_MANIFEST = {
     "fallback": []
   },
   "sortedPages": [
+    "/",
+    "/Scrollpart1",
+    "/Scrollpart2",
+    "/Scrollpart3",
     "/_app",
     "/_error",
-    "/login"
+    "/login",
+    "/[chapter]"
   ]
 };self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
