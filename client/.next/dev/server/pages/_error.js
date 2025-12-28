@@ -1,8 +1,0 @@
-var R=require("../chunks/ssr/[turbopack]_runtime.js")("server/pages/_error.js")
-R.c("server/chunks/ssr/a9aa6_fbec350d._.js")
-R.c("server/chunks/ssr/[externals]_next_dist_shared_lib_no-fallback-error_external_59b92b38.js")
-R.c("server/chunks/ssr/a9aa6_46f2d961._.js")
-R.c("server/chunks/ssr/[root-of-the-server]__6d04dea3._.js")
-R.c("server/chunks/ssr/c3734_Technology Private Limited_Desktop_Edtech_project_client_src_pages__app_0b57d6f4.js")
-R.m("[project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/esm/build/templates/pages.js { INNER_PAGE => \"[project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/error.js [ssr] (ecmascript)\", INNER_DOCUMENT => \"[project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/_document.js [ssr] (ecmascript)\", INNER_APP => \"[project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/_app.js [ssr] (ecmascript)\" } [ssr] (ecmascript)")
-module.exports=R.m("[project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/dist/esm/build/templates/pages.js { INNER_PAGE => \"[project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/node_modules/next/error.js [ssr] (ecmascript)\", INNER_DOCUMENT => \"[project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/_document.js [ssr] (ecmascript)\", INNER_APP => \"[project]/OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/_app.js [ssr] (ecmascript)\" } [ssr] (ecmascript)").exports
