@@ -1,5 +1,5 @@
 import { Box, Container, Typography, TextField, Button } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Cookies } from "react-cookie";
 import Head from "next/head";
@@ -24,6 +24,14 @@ export default function Login() {
   const [messageType, setMessageType] = useState(""); // "success" or "error"
   const router = useRouter();
 
+  // Load saved parent email from cookies on component mount
+  useEffect(() => {
+    const savedParentEmail = cookies.get("parentEmail");
+    if (savedParentEmail) {
+      setEmail(savedParentEmail);
+    }
+  }, []);
+
   const sendOtp = async () => {
     try {
       console.log(email);
@@ -33,6 +41,8 @@ export default function Login() {
         setShowOtp(true);
         setMessage("");
         setMessageType("");
+        // Save email to cookies when OTP is sent successfully
+        cookies.set("parentEmail", email, { path: "/", maxAge: 30 * 24 * 60 * 60 });
       }
     } catch (error) {
       setMessage("Failed to send OTP. Please try again.");
@@ -60,6 +70,7 @@ export default function Login() {
       
       if (response.status === 200) {
         cookies.set("token", response.data.token);
+        cookies.set("parentEmail", email, { path: "/", maxAge: 30 * 24 * 60 * 60 }); // Save for 30 days
         console.log("Login successful, token stored in cookies.");
         setMessage("OTP verified successfully! Redirecting...");
         setMessageType("success");
@@ -222,6 +233,8 @@ export default function Login() {
                   onChange={(e) => {
                     setEmail(e.target.value);
                     setMessage(""); // Clear message when user types
+                    // Save email to cookies as user types
+                    cookies.set("parentEmail", e.target.value, { path: "/", maxAge: 30 * 24 * 60 * 60 });
                   }}
                 />
                 <button

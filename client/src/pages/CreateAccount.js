@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
+import { Cookies } from "react-cookie";
 import AuthFrame from "../components/common/AuthFrame";
 import catImage from "../../public/cats.gif";
 import { Afacad } from "next/font/google";
@@ -13,13 +14,27 @@ const afacad = Afacad({
   weight: ["400", "500", "600"],
 });
 
+const cookies = new Cookies();
+
 export default function CreateAccount() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const [messageType, setMessageType] = useState(""); // "success" or "error"
+  const [messageType, setMessageType] = useState(""); 
   const router = useRouter();
+
+  // Load saved name and email from cookies on component mount
+  useEffect(() => {
+    const savedName = cookies.get("createAccountName");
+    const savedEmail = cookies.get("createAccountEmail");
+    if (savedName) {
+      setName(savedName);
+    }
+    if (savedEmail) {
+      setEmail(savedEmail);
+    }
+  }, []);
 
   const handleCreateAccount = async () => {
     // Clear previous messages
@@ -59,6 +74,12 @@ export default function CreateAccount() {
       console.log("Response received:", response);
 
       if (response.status === 200 || response.status === 201) {
+        // Save name and email to cookies on successful account creation
+        cookies.set("createAccountName", name, { path: "/", maxAge: 30 * 24 * 60 * 60 });
+        cookies.set("createAccountEmail", email, { path: "/", maxAge: 30 * 24 * 60 * 60 });
+        // Also save to studentName cookie for login page
+        cookies.set("studentName", name, { path: "/", maxAge: 30 * 24 * 60 * 60 });
+        
         setMessage("Account created successfully! Redirecting to login...");
         setMessageType("success");
 
@@ -153,6 +174,8 @@ export default function CreateAccount() {
           onChange={(e) => {
             setName(e.target.value);
             setMessage(""); // Clear message when user types
+            // Save name to cookies as user types
+            cookies.set("createAccountName", e.target.value, { path: "/", maxAge: 30 * 24 * 60 * 60 });
           }}
         />
 
@@ -164,6 +187,8 @@ export default function CreateAccount() {
           onChange={(e) => {
             setEmail(e.target.value);
             setMessage(""); // Clear message when user types
+            // Save email to cookies as user types
+            cookies.set("createAccountEmail", e.target.value, { path: "/", maxAge: 30 * 24 * 60 * 60 });
           }}
         />
 

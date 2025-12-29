@@ -36,11 +36,27 @@ module.exports = (app) => {
     const { name, email, password, classno } = req.body;
 
     try {
+      // Validate required fields
+      if (!name || !email || !password) {
+        return res.status(400).json({ message: "Name, email, and password are required" });
+      }
+
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        return res.status(400).json({ message: "Please enter a valid email address" });
+      }
+
+      // Validate password length
+      if (password.length < 6) {
+        return res.status(400).json({ message: "Password must be at least 6 characters long" });
+      }
+
       // Check if user already exists
       const existingUser = await User.findOne({ email });
 
       if (existingUser) {
-        return res.status(400).json({ message: "User already exists" });
+        return res.status(400).json({ message: "User already exists. Please use a different email or sign in." });
       }
 
       // Create user fields (classno is optional)
@@ -61,7 +77,19 @@ module.exports = (app) => {
       });
     } catch (error) {
       console.log("Registration error:", error);
-      res.status(500).json({ message: error.message });
+      
+      // Handle Mongoose validation errors
+      if (error.name === 'ValidationError') {
+        const messages = Object.values(error.errors).map(err => err.message);
+        return res.status(400).json({ message: messages.join(', ') });
+      }
+      
+      // Handle duplicate key error
+      if (error.code === 11000) {
+        return res.status(400).json({ message: "User already exists. Please use a different email or sign in." });
+      }
+      
+      res.status(500).json({ message: error.message || "Server error. Please try again later." });
     }
   });
   // PARENT LOGIN - Generate & Send OTP

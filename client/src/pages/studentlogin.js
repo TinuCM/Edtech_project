@@ -1,5 +1,5 @@
 import { Box, Container, Typography, TextField, Button } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Cookies } from "react-cookie";
 import Head from "next/head";
@@ -22,6 +22,14 @@ export default function StudentLogin() {
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState(""); // "success" or "error"
   const router = useRouter();
+
+  // Load saved student name from cookies on component mount
+  useEffect(() => {
+    const savedStudentName = cookies.get("studentName");
+    if (savedStudentName) {
+      setName(savedStudentName);
+    }
+  }, []);
 
   const handleLogin = async () => {
     // Clear previous messages
@@ -52,8 +60,9 @@ export default function StudentLogin() {
           return;
         }
 
-        // Store token in cookies
+        // Store token and student name in cookies
         cookies.set("token", response.data.token);
+        cookies.set("studentName", name, { path: "/", maxAge: 30 * 24 * 60 * 60 }); // Save for 30 days
         console.log("Login successful, token stored in cookies.");
 
         // Verify the token was stored successfully
@@ -234,6 +243,8 @@ export default function StudentLogin() {
               onChange={(e) => {
                 setName(e.target.value);
                 setMessage(""); // Clear message when user types
+                // Save name to cookies as user types
+                cookies.set("studentName", e.target.value, { path: "/", maxAge: 30 * 24 * 60 * 60 });
               }}
             />
 
