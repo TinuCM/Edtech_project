@@ -1,44 +1,149 @@
 import { Box, Container, Typography, TextField, Button } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Cookies } from "react-cookie";
 import Head from "next/head";
+import AuthFrame from "../components/common/AuthFrame";
+import { Afacad } from "next/font/google";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
+const afacad = Afacad({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+});
 
 const cookies = new Cookies();
 
-//student login component
 export default function StudentLogin() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-  const [userType, setUserType] = useState("student"); // student is selected by default
+  const [userType, setUserType] = useState("student");
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState(""); // "success" or "error"
+  const router = useRouter();
+
+  // Load saved student name from cookies on component mount
+  useEffect(() => {
+    const savedStudentName = cookies.get("studentName");
+    if (savedStudentName) {
+      setName(savedStudentName);
+    }
+  }, []);
 
   const handleLogin = async () => {
+    // Clear previous messages
+    setMessage("");
+    setMessageType("");
+
+    // Validate inputs
+    if (!name || !password) {
+      setMessage("Please enter both name and password.");
+      setMessageType("error");
+      return;
+    }
+
     try {
-      console.log({ name, password });
+      console.log("Sending login request:", { name, password });
       const response = await axios.post("/api/v1/student/login", {
         name,
         password,
       });
-      // console.log(response.data);
+
+      console.log("Response received:", response);
+      
       if (response.status === 200) {
+        // Check if token exists - this is the main validation
+        if (!response.data || !response.data.token) {
+          setMessage("You are not a registered user. Please sign up first.");
+          setMessageType("error");
+          return;
+        }
+
+        // Store token and student name in cookies
         cookies.set("token", response.data.token);
+        cookies.set("studentName", name, { path: "/", maxAge: 30 * 24 * 60 * 60 }); // Save for 30 days
         console.log("Login successful, token stored in cookies.");
-        // window.location.href = "/";
+
+        // Verify the token was stored successfully
+        const storedToken = cookies.get("token");
+        if (!storedToken) {
+          setMessage("Failed to save login session. Please try again.");
+          setMessageType("error");
+          return;
+        }
+
+        // Success - user is logged in (token exists and is stored)
+        setMessage("Login successful");
+        setMessageType("success");
+        
+        // Redirect after 1.5 seconds
+        setTimeout(() => {
+          router.push("/");
+        }, 1500);
       }
     } catch (error) {
-      console.error("Login failed:", error);
+      // Handle axios errors gracefully
       if (error.response) {
         // Server responded with an error status
-        if (error.response.status === 500 || error.response.status === 400 || error.response.status === 401) {
-          alert("Password and name doesn't match. Please try again.");
+        const status = error.response.status;
+        const errorData = error.response.data;
+        const errorMessage = errorData?.message || errorData?.error || error.message || "";
+        
+        if (status === 500) {
+          setMessage("Server error. Please try again later.");
+          setMessageType("error");
+        } else if (status === 401) {
+          // Check if it's a "user not found" or "invalid password" message
+          const lowerMessage = errorMessage.toLowerCase();
+          if (lowerMessage.includes("user not found") || 
+              lowerMessage.includes("create an account") ||
+              lowerMessage.includes("not registered") ||
+              lowerMessage.includes("account first")) {
+            setMessage("You are not a registered user. Please create an account first.");
+          } else if (lowerMessage.includes("invalid password")) {
+            setMessage("Invalid password. Please try again.");
+          } else {
+            // Default message for 401 errors
+            setMessage("You are not a registered user. Please create an account first.");
+          }
+          setMessageType("error");
+        } else if (status === 400) {
+          setMessage(errorMessage || "Please enter both name and password.");
+          setMessageType("error");
+        } else if (status === 404) {
+          setMessage("You are not a registered user. Please create an account first.");
+          setMessageType("error");
+        } else if (status === 403) {
+          setMessage("You are not a registered user. Please create an account first.");
+          setMessageType("error");
         } else {
-          alert("Login failed. Please try again.");
+          // Check if error message indicates user doesn't exist
+          const lowerMessage = errorMessage.toLowerCase();
+          if (lowerMessage.includes("not found") || 
+              lowerMessage.includes("doesn't exist") ||
+              lowerMessage.includes("not a user") ||
+              lowerMessage.includes("not registered") ||
+              lowerMessage.includes("user not found") ||
+              lowerMessage.includes("create an account")) {
+            setMessage("You are not a registered user. Please create an account first.");
+          } else {
+            setMessage(errorMessage || "Login failed. Please try again.");
+          }
+          setMessageType("error");
         }
+      } else if (error.request) {
+        // Request was made but no response received
+        setMessage("Unable to connect to server. Please check your connection.");
+        setMessageType("error");
       } else {
-        // Network error or server not responding
-        alert("Unable to connect to server. Please check your connection.");
+        // Something else happened
+        setMessage("An unexpected error occurred. Please try again.");
+        setMessageType("error");
       }
+      
+      // Log error for debugging (but don't throw it)
+      console.log("Login error handled:", error.response?.status, error.response?.data?.message);
     }
   };
 
@@ -51,275 +156,157 @@ export default function StudentLogin() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Blue gradient background */}
-      <Box
-        sx={{
-          minHeight: "100vh",
-          background: "linear-gradient(135deg, #1E88E5 0%, #1565C0 100%)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "20px",
-        }}
-      >
-        {/* White rounded card */}
-        <Box
-          sx={{
-            backgroundColor: "#FFFFFF",
-            borderRadius: "24px",
-            padding: { xs: "40px 30px", md: "60px 80px" },
-            maxWidth: "1200px",
-            width: "100%",
-            boxShadow: "0 10px 40px rgba(0,0,0,0.1)",
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            gap: 4,
-            position: "relative",
-          }}
-        >
-          {/* Left section - Form */}
-          <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
-            {/* Back arrow and logo */}
-            <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 4 }}>
-              <Box
-                sx={{
-                  fontSize: "24px",
-                  cursor: "pointer",
-                  fontWeight: "bold",
-                }}
-              >
-                ←
-              </Box>
-              <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                <Box
-                  component="img"
-                  src="/logo1.png"
-                  alt="Study.Pilot"
-                  sx={{
-                    height: "32px",
-                    width: "auto",
-                  }}
-                />
-                <Typography
-                  sx={{
-                    fontSize: "20px",
-                    fontWeight: "600",
-                  }}
-                >
-                  Study.Pilot
-                </Typography>
-              </Box>
-            </Box>
-
-            {/* Title */}
-            <Typography
-              sx={{
-                fontSize: { xs: "28px", md: "36px" },
-                fontWeight: "700",
-                mb: 4,
-                color: "#000000",
-              }}
-            >
-              Login to your Account
-            </Typography>
+      <AuthFrame>
+        {/* Left section - Form */}
+        <Box sx={{ flex: 1, display: "flex", flexDirection: "column", minHeight: 0 }}>
+          <div className="form-section">
+            <h1 className={afacad.className}>Login to your Account</h1>
 
             {/* Student/Parent toggle */}
             <Box
               sx={{
                 display: "flex",
+                justifyContent: "center",
+                width: "100%",
                 mb: 4,
-                gap: 0,
-                width: "fit-content",
-                border: "2px solid #000000",
-                borderRadius: "8px",
-                overflow: "hidden",
               }}
             >
-              <Button
-                onClick={() => setUserType("student")}
-                disableRipple
+              <Box
                 sx={{
-                  backgroundColor: "#FFFFFF !important",
-                  color: "#000000 !important",
-                  padding: "8px 32px",
-                  borderRadius: 0,
-                  textTransform: "none",
-                  fontSize: "16px",
-                  fontWeight: "500",
-                  border: "none",
-                  "&:hover": {
-                    backgroundColor: "#F5F5F5 !important",
-                  },
-                }}
-              >
-                Student
-              </Button>
-              <Button
-                onClick={() => (window.location.href = "/parentlogin")}
-                disableRipple
-                sx={{
-                  backgroundColor: "#000000 !important",
-                  color: "#FFFFFF !important",
-                  padding: "8px 32px",
-                  borderRadius: 0,
-                  textTransform: "none",
-                  fontSize: "16px",
-                  fontWeight: "500",
-                  border: "none",
-                  "&:hover": {
-                    backgroundColor: "#333333 !important",
-                  },
-                }}
-              >
-                Parent
-              </Button>
-            </Box>
-
-            {/* Form fields */}
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-              <Box>
-                <Typography
-                  sx={{
-                    fontSize: "16px",
-                    fontWeight: "500",
-                    mb: 1,
-                    color: "#000000",
-                  }}
-                >
-                  Student's Name
-                </Typography>
-                <TextField
-                  placeholder="Enter your name"
-                  onChange={(event) => {
-                    setName(event.target.value);
-                  }}
-                  value={name}
-                  fullWidth
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      borderRadius: "8px",
-                      backgroundColor: "#FFFFFF",
-                      "& fieldset": {
-                        borderColor: "#E0E0E0",
-                        borderWidth: "2px",
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "#BDBDBD",
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "#1E88E5",
-                      },
-                    },
-                    "& .MuiOutlinedInput-input": {
-                      padding: "14px 16px",
-                    },
-                  }}
-                />
-              </Box>
-
-              <Box>
-                <Typography
-                  sx={{
-                    fontSize: "16px",
-                    fontWeight: "500",
-                    mb: 1,
-                    color: "#000000",
-                  }}
-                >
-                  Password
-                </Typography>
-                <TextField
-                  type="password"
-                  placeholder="Enter the password"
-                  onChange={(event) => {
-                    setPassword(event.target.value);
-                  }}
-                  value={password}
-                  fullWidth
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      borderRadius: "8px",
-                      backgroundColor: "#FFFFFF",
-                      "& fieldset": {
-                        borderColor: "#E0E0E0",
-                        borderWidth: "2px",
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "#BDBDBD",
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "#1E88E5",
-                      },
-                    },
-                    "& .MuiOutlinedInput-input": {
-                      padding: "14px 16px",
-                    },
-                  }}
-                />
-              </Box>
-
-              <Button
-                onClick={handleLogin}
-                fullWidth
-                sx={{
-                  backgroundColor: "#000000",
-                  color: "#FFFFFF",
-                  padding: "14px",
+                  display: "flex",
+                  width: "fit-content",
+                  border: "2px solid #000000",
                   borderRadius: "8px",
-                  textTransform: "none",
-                  fontSize: "18px",
-                  fontWeight: "600",
-                  mt: 2,
-                  "&:hover": {
-                    backgroundColor: "#333333",
-                  },
+                  overflow: "hidden",
                 }}
               >
-                Login
-              </Button>
+                <Button
+                  disableRipple
+                  sx={{
+                    backgroundColor: "#000000", // Black - selected (this is student login page)
+                    color: "#FFFFFF",
+                    padding: "8px 32px",
+                    borderRadius: 0,
+                    textTransform: "none",
+                    fontSize: "16px",
+                    fontWeight: "500",
+                    cursor: "default",
+                  }}
+                >
+                  Student
+                </Button>
+                <Button
+                  onClick={() => (window.location.href = "/parentlogin")}
+                  disableRipple
+                  sx={{
+                    backgroundColor: "#FFFFFF", // White - unselected
+                    color: "#000000",
+                    padding: "8px 32px",
+                    borderRadius: 0,
+                    textTransform: "none",
+                    fontSize: "16px",
+                    fontWeight: "500",
+                    "&:hover": {
+                      backgroundColor: "#F5F5F5",
+                    },
+                  }}
+                >
+                  Parent
+                </Button>
+              </Box>
             </Box>
 
-            {/* Sign up link */}
-            <Box sx={{ mt: 6 }}>
+            {/* Message display */}
+            {message && (
+              <Box
+                sx={{
+                  mb: 2,
+                  p: 2,
+                  borderRadius: "8px",
+                  backgroundColor:
+                    messageType === "success" ? "#E8F5E9" : "#FFEBEE",
+                  color: messageType === "success" ? "#2E7D32" : "#C62828",
+                  textAlign: "center",
+                  fontSize: "14px",
+                  fontWeight: "500",
+                }}
+              >
+                {message}
+              </Box>
+            )}
+
+            <label className={afacad.className}>Student's Name</label>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+                setMessage(""); // Clear message when user types
+                // Save name to cookies as user types
+                cookies.set("studentName", e.target.value, { path: "/", maxAge: 30 * 24 * 60 * 60 });
+              }}
+            />
+
+            <label className={afacad.className}>Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setMessage(""); // Clear message when user types
+              }}
+            />
+
+            <button
+              className={`primary-btn ${afacad.className}`}
+              onClick={handleLogin}
+            >
+              Login
+            </button>
+
+            {/* Sign up link - moved inside form-section */}
+            <Box sx={{ mt: 3, textAlign: "center" }}>
               <Typography sx={{ fontSize: "14px", color: "#666666" }}>
                 Don't have an account?{" "}
-                <Link href="/CreateAccount"><span
-                  style={{
-                    color: "#1E88E5",
-                    cursor: "pointer",
-                    fontWeight: "600",
-                  }}
-                >
-                  Sign Up
-                </span>
+                <Link href="/CreateAccount" passHref>
+                  <span
+                    style={{
+                      color: "#1E88E5",
+                      cursor: "pointer",
+                      fontWeight: "600",
+                    }}
+                  >
+                    Sign Up
+                  </span>
                 </Link>
               </Typography>
             </Box>
-          </Box>
-
-          {/* Right section - Cat illustration */}
-          <Box
-            sx={{
-              flex: 1,
-              display: { xs: "none", md: "flex" },
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Box
-              component="img"
-              src="/cats.gif"
-              alt="Cat illustration"
-              sx={{
-                width: "100%",
-                maxWidth: "400px",
-                height: "auto",
-              }}
-            />
-          </Box>
+          </div>
         </Box>
-      </Box>
+
+        {/* Right section - Cat illustration */}
+        <Box
+          sx={{
+            flex: 1,
+            display: { xs: "none", md: "flex" },
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Box
+            component="img"
+            src="/cats.gif"
+            alt="Cat illustration"
+            sx={{
+              width: "100%",
+              maxWidth: "400px",
+              height: "auto",
+            }}
+          />
+        </Box>
+      </AuthFrame>
     </>
   );
 }
-
