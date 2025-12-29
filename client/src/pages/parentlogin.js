@@ -77,7 +77,7 @@ export default function Login() {
         
         // Redirect after 1.5 seconds
         setTimeout(() => {
-          router.push("/");
+          router.push("/chapters");
         }, 1500);
       }
     } catch (error) {

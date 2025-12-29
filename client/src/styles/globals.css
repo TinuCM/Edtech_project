@@ -311,6 +311,10 @@ a {
   flex-direction: column;
 }
 
+.card.reduced-padding {
+  padding: 20px;
+}
+
 .no-scroll-page {
   height: 100vh;
   width: 100vw;
@@ -348,7 +352,8 @@ a {
   flex: 1;
   display: flex;
   align-items: flex-start; /* Align to top instead of center */
-  overflow-y: auto; /* Allow scrolling if content is too tall */
+  overflow-y: auto; /* Allow vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
   min-height: 0; /* Allow flex item to shrink */
 }
 
