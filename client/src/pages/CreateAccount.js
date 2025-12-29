@@ -1,7 +1,7 @@
 // import "../styles/CreateAccount.css";
 import Image from "next/image";
 import blackLogo from "../public/Black logo (1).png";
-import catImage from "../public/Cat.gif";
+import catImage from "../public/cats.gif";
 import { Afacad } from "next/font/google";
 import Link from "next/link";
 const afacad = Afacad({

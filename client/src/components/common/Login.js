@@ -33,6 +33,9 @@ const Login = () => {
       console.log("Login successful, token stored in cookies.");
       // window.location.href = "/";
     }
+    else if (response.status === 400) {
+      console.log("OTP verification failed.");
+    }
   };
 
   return (
