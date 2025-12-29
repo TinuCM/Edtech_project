@@ -306,7 +306,7 @@ export default function StudentLogin() {
           >
             <Box
               component="img"
-              src="/cat.gif"
+              src="/cats.gif"
               alt="Cat illustration"
               sx={{
                 width: "100%",

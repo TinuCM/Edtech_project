@@ -3,6 +3,8 @@ import { useState } from "react";
 import axios from "axios";
 import { Cookies } from "react-cookie";
 import Head from "next/head";
+import catImage from "../../public/cats.gif";
+import Image from "next/image";
 // import { CssBaseline } from "@mui/material";
 
 const cookies = new Cookies();
@@ -330,7 +332,7 @@ export default function Login() {
           >
             <Box
               component="img"
-              src="/cat.gif"
+              src="/cats.gif"
               alt="Cat illustration"
               sx={{
                 width: "100%",
