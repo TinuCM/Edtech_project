@@ -79,7 +79,7 @@ export default function StudentLogin() {
         
         // Redirect after 1.5 seconds
         setTimeout(() => {
-          router.push("/");
+          router.push("/chapters");
         }, 1500);
       }
     } catch (error) {
