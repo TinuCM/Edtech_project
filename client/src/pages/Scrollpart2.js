@@ -1,5 +1,5 @@
 import Image from "next/image";
-import dogImage from "../public/dogs.png";
+import dogImage from "../../public/dogs.png";
 import { Alfa_Slab_One, Poppins, Alegreya } from "next/font/google";
  const alfaSlab = Alfa_Slab_One({
    weight: "400",

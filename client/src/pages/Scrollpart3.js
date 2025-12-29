@@ -1,6 +1,6 @@
 import Image from "next/image";
-import animalsImage from "../public/GroupAnimals.png";
-import cloudsImage from "../public/Clouds.png";
+import animalsImage from "../../public/GroupAnimals.png";
+import cloudsImage from "../../public/Clouds.png";
 import { Alfa_Slab_One, Alegreya } from "next/font/google";
 
 const alfaSlab = Alfa_Slab_One({

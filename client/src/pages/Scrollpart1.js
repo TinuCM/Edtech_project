@@ -1,6 +1,6 @@
 import Image from "next/image";
-import myImage from "../public/Group 34.png";
-import logo from "../public/logo.png";
+import myImage from "../../public/Group 34.png";
+import logo from "../../public/logo.png";
 import Link from "next/link";
 
 import { Alfa_Slab_One, Poppins, Alegreya } from "next/font/google";
