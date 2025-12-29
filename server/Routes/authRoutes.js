@@ -30,6 +30,40 @@ module.exports = (app) => {
       res.status(500).json({ message: error.message });
     }
   });
+
+  // Student Registration
+  app.post("/api/v1/student/register", async (req, res) => {
+    const { name, email, password, classno } = req.body;
+
+    try {
+      // Check if user already exists
+      const existingUser = await User.findOne({ email });
+
+      if (existingUser) {
+        return res.status(400).json({ message: "User already exists" });
+      }
+
+      // Create user fields (classno is optional)
+      const userFields = { name, email, password };
+      if (classno) {
+        userFields.classno = classno;
+      }
+
+      const newUser = await User.create(userFields);
+
+      res.status(201).json({ 
+        message: "Account created successfully", 
+        user: {
+          id: newUser._id,
+          name: newUser.name,
+          email: newUser.email
+        }
+      });
+    } catch (error) {
+      console.log("Registration error:", error);
+      res.status(500).json({ message: error.message });
+    }
+  });
   // PARENT LOGIN - Generate & Send OTP
   app.post("/api/v1/parent/login", async (req, res) => {
     try {
@@ -68,32 +102,33 @@ module.exports = (app) => {
 
   // Verify parent
   app.post("/api/v1/verify/parent", async (req, res) => {
-    // console.log("Verify OTP 1");
     try {
       const { email, otp } = req.body;
-      // console.log("Verify OTP 2", email, otp);
+
+      if (!email || !otp) {
+        return res.status(400).json({ message: "Email and OTP are required" });
+      }
 
       const user = await User.findOne({ email });
-      // console.log("Verify OTP 3", user);
 
-      if (user && user.otp === otp) {
+      if (!user) {
+        return res.status(404).json({ message: "User not found" });
+      }
+
+      if (user.otp === otp) {
         const payload = {
           id: user._id,
           email: user.email,
         };
-        // console.log("Verify OTP 4");
 
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
           expiresIn: process.env.JWT_EXPIRES_IN,
         });
-        // console.log("Verify OTP 5");
 
-        res.status(200).json({ message: " Parent Login Success", token });
-        // console.log("Verify OTP 6");
+        res.status(200).json({ message: "Parent Login Success", token });
+      } else {
+        res.status(400).json({ message: "Invalid OTP. Please try again." });
       }
-      // else{
-      //   res.status(400).json({ message: "Invalid OTP" });
-      // }
     } catch (error) {
       console.log(error);
       res.status(500).send({ message: error.message });
@@ -101,30 +136,35 @@ module.exports = (app) => {
   });
   // Student LOGIN
   app.post("/api/v1/student/login", async (req, res) => {
-    // console.log("Verify OTP 1");
     try {
-      const { name,password } = req.body;
-      // console.log("Verify OTP 2", email, otp);
+      const { name, password } = req.body;
 
-      const user = await User.findOne({ name, password });
-      // console.log("Verify OTP 3", user);
+      if (!name || !password) {
+        return res.status(400).json({ message: "Name and password are required" });
+      }
 
+      // First check if user exists by name
+      const user = await User.findOne({ name });
 
-        const payload = {
-          id: user._id,
-          name: user.name,
-          // password: user.password,
-        };
-        // console.log("Verify OTP 4");
+      if (!user) {
+        return res.status(401).json({ message: "User not found. Please create an account first." });
+      }
 
-        const token = jwt.sign(payload, process.env.JWT_SECRET, {
-          expiresIn: process.env.JWT_EXPIRES_IN,
-        });
-        // console.log("Verify OTP 5");
+      // Then check if password matches
+      if (user.password !== password) {
+        return res.status(401).json({ message: "Invalid password. Please try again." });
+      }
 
-        res.status(200).json({ message: "Student Login Success", token });
-        // console.log("Verify OTP 6");
-      
+      const payload = {
+        id: user._id,
+        name: user.name,
+      };
+
+      const token = jwt.sign(payload, process.env.JWT_SECRET, {
+        expiresIn: process.env.JWT_EXPIRES_IN,
+      });
+
+      res.status(200).json({ message: "Student Login Success", token });
     } catch (error) {
       console.log(error);
       res.status(500).send({ message: error.message });
