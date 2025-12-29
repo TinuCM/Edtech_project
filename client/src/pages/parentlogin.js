@@ -5,6 +5,7 @@ import { Cookies } from "react-cookie";
 import Head from "next/head";
 import catImage from "../../public/cats.gif";
 import Image from "next/image";
+import Link from "next/link";
 // import { CssBaseline } from "@mui/material";
 
 const cookies = new Cookies();
@@ -307,8 +308,9 @@ export default function Login() {
             {/* Sign up link */}
             <Box sx={{ mt: 6 }}>
               <Typography sx={{ fontSize: "14px", color: "#666666" }}>
-                Don't have an account?{" "}
-                <span
+               Don't have an account?{" "}
+                <Link href="/CreateAccount">
+                  <span
                   style={{
                     color: "#1E88E5",
                     cursor: "pointer",
@@ -317,6 +319,7 @@ export default function Login() {
                 >
                   Sign Up
                 </span>
+                  </Link>
               </Typography>
             </Box>
           </Box>

@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Cookies } from "react-cookie";
 import Head from "next/head";
+import Link from "next/link";
 
 const cookies = new Cookies();
 
@@ -282,7 +283,7 @@ export default function StudentLogin() {
             <Box sx={{ mt: 6 }}>
               <Typography sx={{ fontSize: "14px", color: "#666666" }}>
                 Don't have an account?{" "}
-                <span
+                <Link href="/CreateAccount"><span
                   style={{
                     color: "#1E88E5",
                     cursor: "pointer",
@@ -291,6 +292,7 @@ export default function StudentLogin() {
                 >
                   Sign Up
                 </span>
+                </Link>
               </Typography>
             </Box>
           </Box>

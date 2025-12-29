@@ -64,7 +64,8 @@ export default function CreateAccount() {
 
 
             <p className="signin-text">
-              Already have an account? <span>Sign In</span>
+              Already have an account? <Link href="/studentlogin">
+<span>Sign In</span></Link>
             </p>
           </div>
         </div>
