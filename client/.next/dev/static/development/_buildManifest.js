@@ -2,11 +2,8 @@ self.__BUILD_MANIFEST = {
   "/": [
     "static/chunks/pages/index.js"
   ],
-  "/_error": [
-    "static/chunks/pages/_error.js"
-  ],
-  "/learn": [
-    "static/chunks/pages/learn.js"
+  "/classes": [
+    "static/chunks/pages/classes.js"
   ],
   "__rewrites": {
     "afterFiles": [
@@ -24,6 +21,7 @@ self.__BUILD_MANIFEST = {
     "/Scrollpart3",
     "/_app",
     "/_error",
+    "/classes",
     "/learn",
     "/parentlogin"
   ]

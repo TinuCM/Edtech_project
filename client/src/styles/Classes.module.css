@@ -1,0 +1,11 @@
+/* Page wrapper (optional, if you use it elsewhere) */
+.container {
+  padding: 16px 24px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Header spacing (if you later add logo/title here) */
+.header {
+  padding: 10px 0;
+}
