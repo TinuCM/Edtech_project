@@ -4,7 +4,13 @@ const { Schema } = mongoose;
 
 const subjectSchema = new mongoose.Schema({
   classnumber: Number,
-  name: String
+  name: String,
+  price: {
+    type: Number,
+    default: 0
+  }
+}, {
+  timestamps: true
 });
 
 

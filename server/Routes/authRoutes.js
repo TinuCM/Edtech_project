@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const User = mongoose.model("edtechusers");
+const Subject = mongoose.model("subjects");
+const UserSubject = mongoose.model("usersubjects");
 const jwt = require("jsonwebtoken"); // npm i jsonwebtoken
 const sendEmail = require("../utils/sendEmail");
 
@@ -24,7 +26,25 @@ module.exports = (app) => {
 
       const response = await User.create(userFields);
 
-      res.status(201).json({ message: "User added successfully", response });
+      // Get all subjects for this user's class
+      const subjects = await Subject.find({ classnumber: classno });
+
+      // Create locked UserSubject entries for all subjects in their class
+      const userSubjects = subjects.map(subject => ({
+        userId: response._id,
+        subjectId: subject._id,
+        locked: true // All subjects locked initially
+      }));
+
+      if (userSubjects.length > 0) {
+        await UserSubject.insertMany(userSubjects);
+      }
+
+      res.status(201).json({ 
+        message: "User added successfully", 
+        response,
+        subjectsInitialized: userSubjects.length
+      });
     } catch (error) {
       console.log(error);
       res.status(500).json({ message: error.message });
@@ -128,6 +148,47 @@ module.exports = (app) => {
     } catch (error) {
       console.log(error);
       res.status(500).send({ message: error.message });
+    }
+  });
+  
+  // Initialize subjects for existing user (for users created before this feature)
+  app.post("/api/v1/user/initialize-subjects", requireLogin, async (req, res) => {
+    try {
+      const userId = req.user._id;
+      const user = await User.findById(userId);
+
+      if (!user) {
+        return res.status(404).json({ message: "User not found" });
+      }
+
+      // Get all subjects for user's class
+      const subjects = await Subject.find({ classnumber: user.classno });
+
+      // Get existing UserSubject entries for this user
+      const existingUserSubjects = await UserSubject.find({ userId });
+      const existingSubjectIds = existingUserSubjects.map(us => us.subjectId.toString());
+
+      // Create UserSubject entries for subjects that don't exist yet
+      const newUserSubjects = subjects
+        .filter(subject => !existingSubjectIds.includes(subject._id.toString()))
+        .map(subject => ({
+          userId: userId,
+          subjectId: subject._id,
+          locked: true
+        }));
+
+      if (newUserSubjects.length > 0) {
+        await UserSubject.insertMany(newUserSubjects);
+      }
+
+      res.status(200).json({ 
+        message: "Subjects initialized successfully",
+        newSubjectsAdded: newUserSubjects.length,
+        totalSubjects: subjects.length
+      });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: error.message });
     }
   });
 

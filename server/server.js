@@ -26,13 +26,15 @@ require("./Models/Progress");
 require("./Models/QuizScore");
 require("./Models/QuizQuestions");
 require("./Models/Leaderboard");
+require("./Models/UserSubject");
 
 
 // Routes
 
 require("./Routes/authRoutes")(app); // Authentication BackEnd
-require("./Routes/chaptersRoutes")(app); // Authentication BackEnd
-require("./Routes/subjectRoutes")(app); // Authentication BackEnd
+require("./Routes/chaptersRoutes")(app); // Chapters BackEnd
+require("./Routes/subjectRoutes")(app); // Subject BackEnd
+require("./Routes/paymentRoutes")(app); // Payment BackEnd
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
