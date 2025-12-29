@@ -9,6 +9,7 @@ import class3 from "./public/Class3.png";
 import class4 from "./public/Class4.png";
 import class5 from "./public/Class5.png";
 import sideImage from "./public/animals-reading-story-book-1.png";
+import backgroundIcons from "./public/Backgroundicons.png";
 
 export default function Classes() {
   const [selectedClass, setSelectedClass] = useState(null);
@@ -28,6 +29,14 @@ export default function Classes() {
         position: "relative",
         minHeight: "100vh",
         backgroundColor: "#0B91FF", // Blue background
+        backgroundImage: `
+          url(${backgroundIcons.src || backgroundIcons}),
+          url(${backgroundIcons.src || backgroundIcons}),
+          url(${backgroundIcons.src || backgroundIcons})
+        `,
+        backgroundSize: "auto, auto, auto",
+        backgroundPosition: "top left, center, bottom right",
+        backgroundRepeat: "repeat, repeat, repeat",
       }}
     >
       <Box

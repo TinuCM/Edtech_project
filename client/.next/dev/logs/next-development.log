@@ -1,317 +1,109 @@
-[00:00:06.733] Server  LOG      ✓ Ready in 5.5s
-[00:00:09.793] Server  LOG      ○ Compiling / ...
-[00:00:11.892] Browser WARN    Image with src "/_next/static/media/GroupAnimals.ea90fe28.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:11.892] Browser WARN    Image with src "/_next/static/media/dogs.a8c966fa.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:19.557] Server  WARN    MUI Grid: The `item` prop has been removed and is no longer necessary. You can safely remove it.
-
-[00:00:19.558] Server  WARN    MUI Grid: The `xs` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
-
-[00:00:20.045] Browser WARN    MUI Grid: The `item` prop has been removed and is no longer necessary. You can safely remove it.
-
-[00:00:20.045] Browser WARN    MUI Grid: The `xs` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
-
-[00:00:20.352] Browser WARN    Image with src "/_next/static/media/Class1.9d6b7911.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:20.352] Browser WARN    Image with src "/_next/static/media/Class2.8703c9f1.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:20.352] Browser WARN    Image with src "/_next/static/media/Class3.2b0986fc.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:20.353] Browser WARN    Image with src "/_next/static/media/Class4.d4a08c26.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:20.353] Browser WARN    Image with src "/_next/static/media/Class5.8c2f2342.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:10:44.941] Server  LOG      ✓ Compiled in 91ms
-[00:11:22.898] Server  WARN    MUI Grid: The `item` prop has been removed and is no longer necessary. You can safely remove it.
-
-[00:11:22.899] Server  WARN    MUI Grid: The `xs` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
-
-[00:11:23.489] Browser WARN    MUI Grid: The `item` prop has been removed and is no longer necessary. You can safely remove it.
-
-[00:11:23.489] Browser WARN    MUI Grid: The `xs` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
-
-[00:11:23.793] Browser WARN    Image with src "/_next/static/media/Class2.8703c9f1.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:11:23.793] Browser WARN    Image with src "/_next/static/media/Class1.9d6b7911.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:11:23.793] Browser WARN    Image with src "/_next/static/media/Class3.2b0986fc.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:11:23.793] Browser WARN    Image with src "/_next/static/media/Class4.d4a08c26.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:11:23.793] Browser WARN    Image with src "/_next/static/media/Class5.8c2f2342.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:12:16.928] Server  LOG      ✓ Compiled in 235ms
-[00:12:17.412] Browser LOG     Refreshing page data due to server-side change
-[00:12:24.188] Server  LOG      ✓ Compiled in 34ms
-[00:12:24.412] Browser LOG     Refreshing page data due to server-side change
-[00:14:39.056] Server  LOG      ✓ Compiled in 148ms
-[00:14:40.421] Browser LOG     Refreshing page data due to server-side change
-[00:14:40.421] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:116:1
-Parsing ecmascript source code failed
-  114 |     </Box>
-  115 |   );
-> 116 | }
-      | ^
-  117 |
-  118 | /* Reusable image component */
-  119 | function ClassImage({ img, alt }) {
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-[00:14:42.423] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:116:1
-Parsing ecmascript source code failed
-  114 |     </Box>
-  115 |   );
-> 116 | }
-      | ^
-  117 |
-  118 | /* Reusable image component */
-  119 | function ClassImage({ img, alt }) {
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-[00:14:44.417] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:146:1
-Parsing ecmascript source code failed
-  144 |     </Box>
-  145 |   );
-> 146 | }
-      | ^
-  147 |
-  148 | /* Reusable image component */
-  149 | function ClassImage({ img, alt }) {
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-[00:14:49.415] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:146:1
-Parsing ecmascript source code failed
-  144 |     </Box>
-  145 |   );
-> 146 | }
-      | ^
-  147 |
-  148 | /* Reusable image component */
-  149 | function ClassImage({ img, alt, isSelected, onClick }) {
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-[00:14:55.836] Server  LOG      ✓ Compiled in 473ms
-[00:14:56.423] Browser LOG     Refreshing page data due to server-side change
-[00:15:05.018] Server  LOG      ✓ Compiled in 19ms
-[00:15:08.389] Server  LOG      ✓ Compiled in 47ms
-[00:20:29.982] Server  LOG      ✓ Compiled in 430ms
-[00:20:30.423] Browser LOG     Refreshing page data due to server-side change
-[00:20:46.291] Server  LOG      ✓ Compiled in 217ms
-[00:20:46.494] Browser LOG     Refreshing page data due to server-side change
-[00:23:16.643] Server  LOG      ✓ Compiled in 104ms
-[00:23:17.413] Browser ERROR   %o
+[00:00:07.719] Server  LOG      ✓ Ready in 6.1s
+[00:00:10.774] Server  LOG      ○ Compiling / ...
+[00:00:13.165] Browser WARN    Image with src "/_next/static/media/GroupAnimals.ea90fe28.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:13.165] Browser WARN    Image with src "/_next/static/media/dogs.a8c966fa.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:32.830] Browser WARN    Image with src "/_next/static/media/Class2.e90a1179.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:32.830] Browser WARN    Image with src "/_next/static/media/Class1.9d6b7911.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:32.830] Browser WARN    Image with src "/_next/static/media/Class3.2b0986fc.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:32.830] Browser WARN    Image with src "/_next/static/media/Class4.d4a08c26.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:32.830] Browser WARN    Image with src "/_next/static/media/Class5.8c2f2342.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:05:47.239] Server  LOG      ✓ Compiled in 64ms
+[00:05:53.512] Server  LOG      ✓ Compiled in 20ms
+[00:05:53.792] Browser ERROR   %o
 
 %s
 
 %s
  {} The above error occurred in the <Classes> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
-[00:23:20.806] Server  LOG      ✓ Compiled in 36ms
-[00:23:23.098] Server  LOG      ✓ Compiled in 25ms
-[00:23:30.350] Browser LOG     Refreshing page data due to server-side change
-[00:23:30.383] Server  LOG      ✓ Compiled in 18ms
-[00:23:31.966] Browser WARN    Image with src "/_next/static/media/Class2.8703c9f1.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:23:31.966] Browser WARN    Image with src "/_next/static/media/Class3.2b0986fc.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:23:31.966] Browser WARN    Image with src "/_next/static/media/Class1.9d6b7911.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:23:31.966] Browser WARN    Image with src "/_next/static/media/Class4.d4a08c26.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:23:31.966] Browser WARN    Image with src "/_next/static/media/Class5.8c2f2342.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:24:41.149] Server  LOG      ✓ Compiled in 61ms
-[00:24:46.003] Server  LOG      ✓ Compiled in 27ms
-[00:26:36.332] Server  LOG      ✓ Compiled in 50ms
-[00:26:41.885] Server  LOG      ✓ Compiled in 55ms
-[00:26:46.353] Server  LOG      ✓ Compiled in 53ms
-[00:26:47.583] Browser LOG     Refreshing page data due to server-side change
-[00:26:47.583] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:38:16
-Parsing ecmascript source code failed
-  36 |         sx={{
-  37 |           position: "absolute",
-> 38 |           top: ,
-     |                ^
-  39 |           left: 24,
-  40 |           zIndex: 10,
-  41 |         }}
-
-Expected '</', got ','
-[00:26:49.283] Server  LOG      ✓ Compiled in 23ms
-[00:26:50.740] Browser LOG     Refreshing page data due to server-side change
-[00:26:51.217] Server  LOG      ✓ Compiled in 27ms
-[00:28:02.746] Server  LOG      ✓ Compiled in 30ms
-[00:32:08.504] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:8:1
-Module not found: Can't resolve './public/Class2.png'
-   6 | import logo from "./public/logo.png";
-   7 | import class1 from "./public/Class1.png";
->  8 | import class2 from "./public/Class2.png";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 | import class3 from "./public/Class3.png";
-  10 | import class4 from "./public/Class4.png";
-  11 | import class5 from "./public/Class5.png";
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:32:08.507] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:8:1
-Module not found: Can't resolve './public/Class2.png'
-   6 | import logo from "./public/logo.png";
-   7 | import class1 from "./public/Class1.png";
->  8 | import class2 from "./public/Class2.png";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 | import class3 from "./public/Class3.png";
-  10 | import class4 from "./public/Class4.png";
-  11 | import class5 from "./public/Class5.png";
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:32:08.512] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:8:1
-Module not found: Can't resolve './public/Class2.png'
-   6 | import logo from "./public/logo.png";
-   7 | import class1 from "./public/Class1.png";
->  8 | import class2 from "./public/Class2.png";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 | import class3 from "./public/Class3.png";
-  10 | import class4 from "./public/Class4.png";
-  11 | import class5 from "./public/Class5.png";
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:32:08.516] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:8:1
-Module not found: Can't resolve './public/Class2.png'
-   6 | import logo from "./public/logo.png";
-   7 | import class1 from "./public/Class1.png";
->  8 | import class2 from "./public/Class2.png";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 | import class3 from "./public/Class3.png";
-  10 | import class4 from "./public/Class4.png";
-  11 | import class5 from "./public/Class5.png";
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:32:08.521] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:8:1
-Module not found: Can't resolve './public/Class2.png'
-   6 | import logo from "./public/logo.png";
-   7 | import class1 from "./public/Class1.png";
->  8 | import class2 from "./public/Class2.png";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 | import class3 from "./public/Class3.png";
-  10 | import class4 from "./public/Class4.png";
-  11 | import class5 from "./public/Class5.png";
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:32:08.525] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:8:1
-Module not found: Can't resolve './public/Class2.png'
-   6 | import logo from "./public/logo.png";
-   7 | import class1 from "./public/Class1.png";
->  8 | import class2 from "./public/Class2.png";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 | import class3 from "./public/Class3.png";
-  10 | import class4 from "./public/Class4.png";
-  11 | import class5 from "./public/Class5.png";
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:32:08.529] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:8:1
-Module not found: Can't resolve './public/Class2.png'
-   6 | import logo from "./public/logo.png";
-   7 | import class1 from "./public/Class1.png";
->  8 | import class2 from "./public/Class2.png";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 | import class3 from "./public/Class3.png";
-  10 | import class4 from "./public/Class4.png";
-  11 | import class5 from "./public/Class5.png";
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:32:08.533] Server  ERROR    ⨯ ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:8:1
-Module not found: Can't resolve './public/Class2.png'
-   6 | import logo from "./public/logo.png";
-   7 | import class1 from "./public/Class1.png";
->  8 | import class2 from "./public/Class2.png";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 | import class3 from "./public/Class3.png";
-  10 | import class4 from "./public/Class4.png";
-  11 | import class5 from "./public/Class5.png";
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:32:08.546] Server  LOG      ✓ Compiled in 96ms
-[00:32:09.418] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:8:1
-Module not found: Can't resolve './public/Class2.png'
-   6 | import logo from "./public/logo.png";
-   7 | import class1 from "./public/Class1.png";
->  8 | import class2 from "./public/Class2.png";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 | import class3 from "./public/Class3.png";
-  10 | import class4 from "./public/Class4.png";
-  11 | import class5 from "./public/Class5.png";
-
-https://nextjs.org/docs/messages/module-not-found
-[00:32:28.422] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:8:1
-Module not found: Can't resolve './public/Class2.png'
-   6 | import logo from "./public/logo.png";
-   7 | import class1 from "./public/Class1.png";
->  8 | import class2 from "./public/Class2.png";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 | import class3 from "./public/Class3.png";
-  10 | import class4 from "./public/Class4.png";
-  11 | import class5 from "./public/Class5.png";
-
-https://nextjs.org/docs/messages/module-not-found
-[00:32:30.420] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:8:1
-Module not found: Can't resolve './public/Class2.png'
-   6 | import logo from "./public/logo.png";
-   7 | import class1 from "./public/Class1.png";
->  8 | import class2 from "./public/Class2.png";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 | import class3 from "./public/Class3.png";
-  10 | import class4 from "./public/Class4.png";
-  11 | import class5 from "./public/Class5.png";
-
-https://nextjs.org/docs/messages/module-not-found
-[00:32:30.421] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:8:1
-Module not found: Can't resolve './public/Class2.png'
-   6 | import logo from "./public/logo.png";
-   7 | import class1 from "./public/Class1.png";
->  8 | import class2 from "./public/Class2.png";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 | import class3 from "./public/Class3.png";
-  10 | import class4 from "./public/Class4.png";
-  11 | import class5 from "./public/Class5.png";
-
-https://nextjs.org/docs/messages/module-not-found
-[02:56:19.453] Server  LOG      ✓ Compiled in 156ms
-[02:56:27.106] Browser WARN    Image with src "/_next/static/media/Class3.2b0986fc.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[02:56:27.106] Browser WARN    Image with src "/_next/static/media/Class1.9d6b7911.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[02:56:27.106] Browser WARN    Image with src "/_next/static/media/Class4.d4a08c26.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[02:56:27.106] Browser WARN    Image with src "/_next/static/media/Class5.8c2f2342.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[02:56:28.193] Browser WARN    Image with src "/_next/static/media/Class2.e90a1179.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[02:57:23.245] Server  LOG      ✓ Compiled in 181ms
-[02:57:23.417] Browser ERROR   %o
+[00:05:57.877] Server  LOG      ✓ Compiled in 20ms
+[00:05:58.685] Browser ERROR   %o
 
 %s
 
 %s
  {} The above error occurred in the <Classes> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
-[02:57:25.585] Server  LOG      ✓ Compiled in 43ms
-[02:57:49.341] Browser WARN    Image with src "/_next/static/media/Class2.e90a1179.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[02:57:49.341] Browser WARN    Image with src "/_next/static/media/Class3.2b0986fc.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[02:57:49.341] Browser WARN    Image with src "/_next/static/media/Class1.9d6b7911.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[02:57:49.342] Browser WARN    Image with src "/_next/static/media/Class4.d4a08c26.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[02:57:49.342] Browser WARN    Image with src "/_next/static/media/Class5.8c2f2342.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[02:58:18.025] Server  LOG      ✓ Compiled in 35ms
-[03:00:43.952] Server  LOG      ✓ Compiled in 43ms
-[03:02:12.482] Browser WARN    Image with src "/_next/static/media/Class1.9d6b7911.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[03:02:12.482] Browser WARN    Image with src "/_next/static/media/Class2.e90a1179.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[03:02:12.482] Browser WARN    Image with src "/_next/static/media/Class3.2b0986fc.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[03:02:12.482] Browser WARN    Image with src "/_next/static/media/Class4.d4a08c26.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[03:02:12.482] Browser WARN    Image with src "/_next/static/media/Class5.8c2f2342.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:05:59.336] Server  LOG      ✓ Compiled in 55ms
+[00:05:59.681] Browser LOG     Refreshing page data due to server-side change
+[00:05:59.681] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:32:7
+Parsing ecmascript source code failed
+  30 |         backgroundColor: "#0B91FF", // Blue background
+  31 |         backgroundImage:
+> 32 |       }}
+     |       ^
+  33 |     >
+  34 |       <Box
+  35 |         sx={{
+
+Expression expected
+[00:06:04.691] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:32:7
+Parsing ecmascript source code failed
+  30 |         backgroundColor: "#0B91FF", // Blue background
+  31 |         backgroundImage:
+> 32 |       }}
+     |       ^
+  33 |     >
+  34 |       <Box
+  35 |         sx={{
+
+Expression expected
+[00:06:06.679] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:32:7
+Parsing ecmascript source code failed
+  30 |         backgroundColor: "#0B91FF", // Blue background
+  31 |         backgroundImage:
+> 32 |       }}
+     |       ^
+  33 |     >
+  34 |       <Box
+  35 |         sx={{
+
+Expression expected
+[00:06:06.862] Server  LOG      ✓ Compiled in 32ms
+[00:06:07.680] Browser LOG     Refreshing page data due to server-side change
+[00:06:10.775] Server  LOG      ✓ Compiled in 30ms
+[00:06:11.691] Browser ERROR   %o
+
+%s
+
+%s
+ {} The above error occurred in the <Classes> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:06:15.879] Server  LOG      ✓ Compiled in 21ms
+[00:06:16.687] Browser LOG     Refreshing page data due to server-side change
+[00:06:16.687] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:32:7
+Parsing ecmascript source code failed
+  30 |         backgroundColor: "#0B91FF", // Blue background
+  31 |         backgroundImage:
+> 32 |       }}
+     |       ^
+  33 |     >
+  34 |       <Box
+  35 |         sx={{
+
+Expression expected
+[00:06:18.690] Browser ERROR   ./OneDrive - G10X Technology Private Limited/Desktop/Edtech_project/client/src/pages/classes.js:32:7
+Parsing ecmascript source code failed
+  30 |         backgroundColor: "#0B91FF", // Blue background
+  31 |         backgroundImage:
+> 32 |       }}
+     |       ^
+  33 |     >
+  34 |       <Box
+  35 |         sx={{
+
+Expression expected
+[00:06:23.769] Server  LOG      ✓ Compiled in 58ms
+[00:06:24.692] Browser LOG     Refreshing page data due to server-side change
+[00:06:28.372] Server  LOG      ✓ Compiled in 46ms
+[00:06:30.444] Server  LOG      ✓ Compiled in 45ms
+[00:06:40.002] Server  LOG      ✓ Compiled in 37ms
+[00:06:42.488] Server  LOG      ✓ Compiled in 15ms
+[00:06:49.867] Browser WARN    Image with src "/_next/static/media/Class2.e90a1179.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:06:49.867] Browser WARN    Image with src "/_next/static/media/Class1.9d6b7911.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:06:49.867] Browser WARN    Image with src "/_next/static/media/Class3.2b0986fc.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:06:49.867] Browser WARN    Image with src "/_next/static/media/Class4.d4a08c26.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:06:49.867] Browser WARN    Image with src "/_next/static/media/Class5.8c2f2342.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:07:12.110] Server  LOG      ✓ Compiled in 25ms
+[00:07:59.807] Server  LOG      ✓ Compiled in 189ms
+[00:08:00.678] Browser LOG     Refreshing page data due to server-side change
+[00:08:02.442] Server  LOG      ✓ Compiled in 88ms
+[00:08:02.675] Browser LOG     Refreshing page data due to server-side change
+[00:09:30.182] Server  LOG      ✓ Compiled in 31ms
