@@ -300,12 +300,19 @@ a {
   max-width: 1100px;
 
   height: auto;
-  max-height: calc(100vh - 64px); /* ALWAYS stays inside viewport */
+  min-height: auto;
+  max-height: calc(100vh - 80px); /* ALWAYS stays inside viewport with padding */
 
   border-radius: 25px;
   padding: 32px;
 
-  overflow:visible; /* no internal scroll */
+  overflow: hidden; /* Prevent content from going outside card */
+  display: flex;
+  flex-direction: column;
+}
+
+.card.reduced-padding {
+  padding: 20px;
 }
 
 .no-scroll-page {
@@ -342,9 +349,12 @@ a {
 
 /* Content */
 .card-content {
-  height: 100%;
+  flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Align to top instead of center */
+  overflow-y: auto; /* Allow vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  min-height: 0; /* Allow flex item to shrink */
 }
 
 
@@ -374,7 +384,8 @@ a {
   max-width: 658px; 
   display: flex;
   flex-direction: column;
-  justify-content: center;  /* ✅ enforce form width */
+  justify-content: flex-start; /* Align form to top */
+  min-height: 0; /* Allow flex item to shrink */
 }
 
 
