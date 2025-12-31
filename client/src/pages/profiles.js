@@ -229,7 +229,8 @@ export default function Profiles() {
   const handleProfileClick = (profile) => {
     cookies.set("selectedChildId", profile.id, { path: "/", maxAge: 30 * 24 * 60 * 60 });
     cookies.set("selectedChildName", profile.name, { path: "/", maxAge: 30 * 24 * 60 * 60 });
-    router.push("/chapters");
+    cookies.set("selectedChildClass", profile.classno, { path: "/", maxAge: 30 * 24 * 60 * 60 });
+    router.push("/Subject");
   };
 
   const handleAcademicReport = (profile, e) => {

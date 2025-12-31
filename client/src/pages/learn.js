@@ -3,10 +3,13 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
+import { Cookies } from "react-cookie";
 import { Irish_Grover } from "next/font/google";
 import styles from "../styles/Learn.module.css";
 import logo from "../../public/logo.png";
 import blackLogo from "../../public/Black logo (1).png";
+
+const cookies = new Cookies();
  
 const irishGrover = Irish_Grover({
   weight: "400",
@@ -56,26 +59,61 @@ export default function Learn() {
           return;
         }
        
-        // Try direct backend URL first, then fallback to proxy
-        const apiUrl = `http://localhost:5001/api/v1/chapters/${chapterId}`;
+        // Get authentication token
+        const token = cookies.get("token");
+        const selectedChildId = cookies.get("selectedChildId");
+        
+        // Use relative URL (will be proxied by Next.js)
+        // If that fails, we'll try absolute URL as fallback
+        let apiUrl = `/api/v1/chapters/${chapterId}`;
         console.log("API URL:", apiUrl);
         console.log("Chapter ID being used:", chapterId);
-        console.log("Chapter ID type:", typeof chapterId);
-        console.log("Chapter ID length:", chapterId.length);
+        console.log("Token exists:", !!token);
+        console.log("Child ID:", selectedChildId);
        
-        const response = await axios.get(apiUrl);
+        let response;
+        try {
+          response = await axios.get(apiUrl, {
+            params: {
+              childId: selectedChildId
+            },
+            headers: token ? {
+              Authorization: `Bearer ${token}`,
+            } : {},
+          });
+        } catch (networkError) {
+          // If relative URL fails, try absolute URL
+          if (networkError.code === 'ERR_NETWORK' || networkError.message.includes('Network Error')) {
+            console.log("Relative URL failed, trying absolute URL...");
+            apiUrl = `http://localhost:5001/api/v1/chapters/${chapterId}`;
+            response = await axios.get(apiUrl, {
+              params: {
+                childId: selectedChildId
+              },
+              headers: token ? {
+                Authorization: `Bearer ${token}`,
+              } : {},
+            });
+          } else {
+            throw networkError;
+          }
+        }
         console.log("API Response:", response.data);
-       
+     
         if (response.data && response.data.chapter) {
           setChapterData(response.data.chapter);
           // Construct video URL from backend
           if (response.data.chapter.videourl) {
             const baseUrl = "http://localhost:5001";
-            const videoPath = response.data.chapter.videourl.startsWith("videos/")
-              ? response.data.chapter.videourl
-              : `videos/${response.data.chapter.videourl}`;
+            let videoPath = response.data.chapter.videourl;
+            
+            // The videourl from DB is already in the format "videos/number-magic.mp4"
+            // So we just need to prepend "/uploads/" to it
+            // Result: http://localhost:5001/uploads/videos/number-magic.mp4
+            
             const fullVideoUrl = `${baseUrl}/uploads/${videoPath}`;
-            console.log("Video URL:", fullVideoUrl);
+            console.log("Video path from DB:", videoPath);
+            console.log("Full video URL:", fullVideoUrl);
             setVideoUrl(fullVideoUrl);
           } else {
             setError("No video URL found for this chapter");
@@ -136,26 +174,25 @@ export default function Learn() {
         <div style={{ marginBottom: "4px" }}>
           <Image src={blackLogo} alt="Study Pilot Logo" height={25} />
         </div>
-        <Link href="/classes">
-          <button
-            style={{
-              background: "none",
-              border: "none",
-              fontSize: "30px",
-              cursor: "pointer",
-              color: "#000",
-              padding: "8px",
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.background = "rgba(255, 255, 255, 0.1)";
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.background = "none";
-            }}
-          >
-            ←
-          </button>
-        </Link>
+        <button
+          onClick={() => router.back()}
+          style={{
+            background: "none",
+            border: "none",
+            fontSize: "30px",
+            cursor: "pointer",
+            color: "#000",
+            padding: "8px",
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.background = "rgba(255, 255, 255, 0.1)";
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.background = "none";
+          }}
+        >
+          ←
+        </button>
       </div>
  
       {loading && (
@@ -245,9 +282,12 @@ export default function Learn() {
           No video available for this chapter
         </div>
       )}
-      <button className={`${styles.nextBtn} ${irishGrover.className}`}>
-  Next
-</button>
+      <button 
+        className={`${styles.nextBtn} ${irishGrover.className}`}
+        onClick={() => router.push('/dinoquiz')}
+      >
+        Next
+      </button>
  
     </div>
   );
