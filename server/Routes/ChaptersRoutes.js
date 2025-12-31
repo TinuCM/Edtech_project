@@ -4,7 +4,7 @@ const Chapters = mongoose.model("chapters");
 const UserSubject = mongoose.model("usersubjects");
 
 module.exports = (app) => {
-  // Add New Chapter
+  // Add New Chapter (Public - No login required for setup)
   app.post("/api/v1/chapters/add", async (req, res) => {
     const { subjectId, name, description, videourl } = req.body;
 

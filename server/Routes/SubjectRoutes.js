@@ -5,7 +5,7 @@ const UserSubject = mongoose.model("usersubjects");
 const User = mongoose.model("edtechusers");
 
 module.exports = (app) => {
-  // Add New Subject
+  // Add New Subject (Public - No login required for setup)
   app.post("/api/v1/subject/add", async (req, res) => {
     const { classnumber, name, price } = req.body;
 
@@ -250,6 +250,7 @@ module.exports = (app) => {
 
       await subject.save();
 
+      
       res.status(200).json({ 
         message: "Subject updated successfully", 
         subject 
