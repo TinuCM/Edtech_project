@@ -6,7 +6,30 @@ const userSchema = new mongoose.Schema({
   email: String,
   password: String,
   classno: Number,
-  otp: String
+  otp: String,
+  emoji: String,
+  parentId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'edtechusers',
+    default: null
+  },
+  isParent: {
+    type: Boolean,
+    default: false
+  },
+  subscriptionStatus: {
+    type: String,
+    enum: ['trial', 'active', 'expired'],
+    default: 'trial'
+  },
+  subscriptionType: {
+    type: String,
+    enum: ['monthly', 'yearly', null],
+    default: null
+  },
+  subscriptionStartDate: Date,
+  subscriptionEndDate: Date,
+  lastActivityTime: Date
 });
 
     

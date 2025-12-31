@@ -1,20 +1,50 @@
 import Image from "next/image";
 import Head from "next/head";
-import { Box, Avatar } from "@mui/material";
+import { Box, Avatar, Chip, Button } from "@mui/material";
 import blackLogo from "../../public/Black logo (1).png";
 import { useRouter } from "next/router";
 import { Poppins } from "next/font/google";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import LockIcon from "@mui/icons-material/Lock";
 import AuthFrame from "../components/common/AuthFrame";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Cookies } from "react-cookie";
+import CardMembershipIcon from "@mui/icons-material/CardMembership";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
+const cookies = new Cookies();
+
 export default function Chapters() {
   const router = useRouter();
+  const [subscriptionStatus, setSubscriptionStatus] = useState("trial");
+  const token = cookies.get("token");
+  const parentEmail = cookies.get("parentEmail");
+
+  useEffect(() => {
+    if (token && parentEmail) {
+      fetchSubscriptionStatus();
+    }
+  }, [token, parentEmail]);
+
+  const fetchSubscriptionStatus = async () => {
+    try {
+      const response = await axios.get("/api/v1/parent/subscription", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (response.status === 200) {
+        setSubscriptionStatus(response.data.status || "trial");
+      }
+    } catch (error) {
+      console.error("Error fetching subscription:", error);
+    }
+  };
 
   const chapters = [
     {
@@ -91,7 +121,7 @@ export default function Chapters() {
     },
   ];
 
-  const getStatusBadge = (status) => {
+  const getStatusBadge = (status, chapterId) => {
     if (status === "completed") {
       return (
         <Box
@@ -122,6 +152,20 @@ export default function Chapters() {
         >
           In Progress
         </Box>
+      );
+    } else if (chapterId === 1) {
+      // First chapter is always free
+      return (
+        <Chip
+          label="FREE"
+          sx={{
+            backgroundColor: "#4CAF50",
+            color: "white",
+            fontSize: "11px",
+            fontWeight: "600",
+            height: "24px",
+          }}
+        />
       );
     } else {
       return (
@@ -273,16 +317,18 @@ export default function Chapters() {
                     transform: "translateY(-3px)",
                     boxShadow: "0 6px 12px rgba(0,0,0,0.1)",
                   },
-                  cursor: chapter.status === "locked" ? "not-allowed" : "pointer",
-                  opacity: chapter.status === "locked" ? 0.7 : 1,
+                  cursor: chapter.status === "locked" && chapter.id !== 1 ? "not-allowed" : "pointer",
+                  opacity: chapter.status === "locked" && chapter.id !== 1 ? 0.7 : 1,
                   display: "flex",
                   flexDirection: "column",
                   minHeight: "fit-content",
                 }}
                 onClick={() => {
-                  if (chapter.status !== "locked") {
-                    // Navigate to chapter details
+                  if (chapter.status !== "locked" || chapter.id === 1) {
+                    // First chapter is always accessible, or if not locked
                     console.log("Navigate to chapter:", chapter.id);
+                  } else if (subscriptionStatus !== "active") {
+                    router.push("/subscription");
                   }
                 }}
               >
@@ -296,7 +342,7 @@ export default function Chapters() {
                   }}
                 >
                   {getIcon(chapter)}
-                  {getStatusBadge(chapter.status)}
+                  {getStatusBadge(chapter.status, chapter.id)}
                 </Box>
 
                 {/* Title */}
@@ -355,22 +401,46 @@ export default function Chapters() {
                 </Box>
 
                 {/* Action Button */}
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 0.5,
-                    color: chapter.actionColor,
-                    fontSize: "13px",
-                    fontWeight: "500",
-                    cursor: chapter.status === "locked" ? "not-allowed" : "pointer",
-                  }}
-                >
-                  {chapter.status === "locked" && (
-                    <LockIcon sx={{ fontSize: "16px" }} />
-                  )}
-                  <span>{chapter.actionText}</span>
-                </Box>
+                {chapter.status === "locked" && chapter.id !== 1 && subscriptionStatus !== "active" ? (
+                  <Button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      router.push("/subscription");
+                    }}
+                    variant="contained"
+                    startIcon={<CardMembershipIcon />}
+                    fullWidth
+                    sx={{
+                      backgroundColor: "#0B91FF",
+                      color: "white",
+                      fontSize: "13px",
+                      fontWeight: "600",
+                      padding: "8px",
+                      "&:hover": {
+                        backgroundColor: "#0A7FD9",
+                      },
+                    }}
+                  >
+                    Subscribe to Unlock
+                  </Button>
+                ) : (
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 0.5,
+                      color: chapter.actionColor,
+                      fontSize: "13px",
+                      fontWeight: "500",
+                      cursor: chapter.status === "locked" && chapter.id !== 1 ? "not-allowed" : "pointer",
+                    }}
+                  >
+                    {chapter.status === "locked" && chapter.id !== 1 && (
+                      <LockIcon sx={{ fontSize: "16px" }} />
+                    )}
+                    <span>{chapter.actionText}</span>
+                  </Box>
+                )}
               </Box>
             ))}
           </Box>
@@ -379,4 +449,3 @@ export default function Chapters() {
     </>
   );
 }
-

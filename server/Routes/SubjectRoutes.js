@@ -134,21 +134,37 @@ module.exports = (app) => {
   // Get Subjects by Class with User's Lock Status
   app.get("/api/v1/subject/by-class/:classno", requireLogin, async (req, res) => {
     const { classno } = req.params;
-    const userId = req.user._id;
+    const { childId } = req.query;
+    const parentId = req.user._id;
 
     try {
+      // Use childId if provided, otherwise use parent's ID
+      let actualUserId = parentId;
+      if (childId) {
+        // Verify child belongs to parent
+        const child = await User.findOne({ _id: childId, parentId });
+        if (!child) {
+          return res.status(403).json({ message: "Child not found or access denied" });
+        }
+        actualUserId = childId;
+      }
+
       const subjects = await Subjects.find({ classnumber: parseInt(classno) });
       
       if (!subjects || subjects.length === 0) {
         return res.status(404).json({ message: "No subjects found for this class" });
       }
 
-      // Get all UserSubject entries for this user
-      const userSubjects = await UserSubject.find({ userId });
+      // Get all UserSubject entries for the child (or parent if no childId)
+      const userSubjects = await UserSubject.find({ userId: actualUserId });
       const userSubjectMap = {};
       userSubjects.forEach(us => {
         userSubjectMap[us.subjectId.toString()] = us;
       });
+
+      // Check parent subscription status (first chapter is always free)
+      const parent = await User.findById(parentId);
+      const isSubscribed = parent?.subscriptionStatus === 'active';
 
       // Map subjects with lock status
       const subjectsWithStatus = subjects.map(subject => {
@@ -158,15 +174,19 @@ module.exports = (app) => {
         if (!userSubject) {
           // Create the entry in background (don't wait)
           UserSubject.create({
-            userId: userId,
+            userId: actualUserId,
             subjectId: subject._id,
             locked: true
           }).catch(err => console.log("Error creating UserSubject:", err));
         }
 
+        // First chapter is always free, so subject is accessible if subscribed or first chapter exists
+        // For now, we'll show it as unlocked if subscribed, otherwise check UserSubject
+        const isLocked = !isSubscribed && (userSubject ? userSubject.locked : true);
+
         return {
           ...subject.toObject(),
-          locked: userSubject ? userSubject.locked : true, // Default to locked
+          locked: isLocked,
           purchaseDate: userSubject && !userSubject.locked ? userSubject.purchaseDate : null
         };
       });

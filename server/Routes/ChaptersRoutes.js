@@ -40,32 +40,158 @@ module.exports = (app) => {
     }
   });
 
-  // Get Chapters by Subject (checks if subject is unlocked)
+  // Get Chapters by Subject (checks if subject is unlocked) with progress
   app.get("/api/v1/chapters/by-subject/:subjectId", requireLogin, async (req, res) => {
     const { subjectId } = req.params;
-    const userId = req.user._id;
+    const { childId } = req.query; // Get childId from query params
+    const parentId = req.user._id;
+    const User = mongoose.model("edtechusers");
 
     try {
-      // Check if subject is unlocked for this user
-      const userSubject = await UserSubject.findOne({ userId, subjectId });
-
-      if (!userSubject || userSubject.locked) {
-        return res.status(403).json({ 
-          message: "Subject is locked. Please purchase to access chapters.",
-          locked: true
-        });
+      const Progress = mongoose.model("progress");
+      
+      // Use childId if provided, otherwise use parent's ID (for backward compatibility)
+      let actualUserId = parentId;
+      if (childId) {
+        // Verify child belongs to parent
+        const child = await User.findOne({ _id: childId, parentId });
+        if (!child) {
+          return res.status(403).json({ message: "Child not found or access denied" });
+        }
+        actualUserId = childId;
+      }
+      
+      // Get child user to check subscription
+      const childUser = childId ? await User.findById(childId) : null;
+      const childParentId = childUser?.parentId || parentId;
+      
+      // Check parent subscription
+      let isSubscribed = false;
+      if (childParentId) {
+        const parent = await User.findById(childParentId);
+        isSubscribed = parent?.subscriptionStatus === 'active';
       }
 
-      // Subject is unlocked, return chapters
-      const chapters = await Chapters.find({ subjectId });
+      // Check if subject is unlocked for the child (or parent if no childId)
+      const userSubject = await UserSubject.findOne({ userId: actualUserId, subjectId });
+
+      // First chapter is always free, rest require subscription or purchase
+      const chapters = await Chapters.find({ subjectId }).sort({ _id: 1 }); // Sort by creation order
 
       if (!chapters || chapters.length === 0) {
         return res.status(404).json({ message: "No chapters found for this subject" });
       }
 
+      // Get progress for all chapters
+      const progressEntries = await Progress.find({ userId: actualUserId, subjectId });
+      const progressMap = {};
+      progressEntries.forEach(p => {
+        progressMap[p.chapterId.toString()] = p;
+      });
+
+      // Map chapters with status
+      const chaptersWithStatus = chapters.map((chapter, index) => {
+        const isFirstChapter = index === 0;
+        const progress = progressMap[chapter._id.toString()];
+        const isCompleted = progress?.completed || false;
+        
+        // Determine if chapter is accessible
+        let status = "locked";
+        if (isFirstChapter) {
+          status = isCompleted ? "completed" : "in-progress";
+        } else if (userSubject && !userSubject.locked) {
+          status = isCompleted ? "completed" : "in-progress";
+        } else if (isSubscribed) {
+          status = isCompleted ? "completed" : "in-progress";
+        }
+
+        return {
+          _id: chapter._id,
+          name: chapter.name,
+          description: chapter.description,
+          videourl: chapter.videourl,
+          subjectId: chapter.subjectId,
+          status,
+          isFirstChapter,
+          progress: isCompleted ? 100 : (status === "in-progress" ? 0 : 0)
+        };
+      });
+
       res.status(200).json({ 
         message: "Chapters retrieved successfully", 
-        chapters,
+        chapters: chaptersWithStatus,
+        locked: !userSubject || userSubject.locked,
+        isSubscribed
+      });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  // Get Single Chapter (checks if subject is unlocked) with progress
+  app.get("/api/v1/chapters/:chapterId", requireLogin, async (req, res) => {
+    const { chapterId } = req.params;
+    const { childId } = req.query;
+    const parentId = req.user._id;
+    const User = mongoose.model("edtechusers");
+
+    try {
+      const Progress = mongoose.model("progress");
+      
+      // Use childId if provided
+      let actualUserId = parentId;
+      if (childId) {
+        const child = await User.findOne({ _id: childId, parentId });
+        if (!child) {
+          return res.status(403).json({ message: "Child not found or access denied" });
+        }
+        actualUserId = childId;
+      }
+      
+      const chapter = await Chapters.findById(chapterId);
+      
+      if (!chapter) {
+        return res.status(404).json({ message: "Chapter not found" });
+      }
+
+      // Check if it's the first chapter (always free)
+      const allChapters = await Chapters.find({ subjectId: chapter.subjectId }).sort({ _id: 1 });
+      const isFirstChapter = allChapters[0]?._id.toString() === chapterId;
+
+      // Get user to check subscription
+      const user = await User.findById(actualUserId);
+      const userParentId = user?.parentId || parentId;
+      let isSubscribed = false;
+      if (userParentId) {
+        const parent = await User.findById(userParentId);
+        isSubscribed = parent?.subscriptionStatus === 'active';
+      }
+
+      // Check if the subject this chapter belongs to is unlocked
+      const userSubject = await UserSubject.findOne({ 
+        userId: actualUserId, 
+        subjectId: chapter.subjectId 
+      });
+
+      // First chapter is always accessible
+      if (!isFirstChapter && (!userSubject || userSubject.locked) && !isSubscribed) {
+        return res.status(403).json({ 
+          message: "Subject is locked. Please purchase to access this chapter.",
+          locked: true
+        });
+      }
+
+      // Get progress
+      const progress = await Progress.findOne({ userId: actualUserId, chapterId });
+
+      res.status(200).json({ 
+        message: "Chapter retrieved successfully", 
+        chapter: {
+          ...chapter.toObject(),
+          isFirstChapter,
+          status: progress?.completed ? "completed" : "in-progress"
+        },
         locked: false
       });
     } catch (error) {
@@ -74,35 +200,49 @@ module.exports = (app) => {
     }
   });
 
-  // Get Single Chapter (checks if subject is unlocked)
-  app.get("/api/v1/chapters/:chapterId", requireLogin, async (req, res) => {
+  // Mark video as completed
+  app.post("/api/v1/chapters/:chapterId/complete", requireLogin, async (req, res) => {
     const { chapterId } = req.params;
-    const userId = req.user._id;
+    const { childId } = req.body; // Get childId from body
+    const parentId = req.user._id;
+    const User = mongoose.model("edtechusers");
 
     try {
+      const Progress = mongoose.model("progress");
       const chapter = await Chapters.findById(chapterId);
       
       if (!chapter) {
         return res.status(404).json({ message: "Chapter not found" });
       }
 
-      // Check if the subject this chapter belongs to is unlocked
-      const userSubject = await UserSubject.findOne({ 
-        userId, 
-        subjectId: chapter.subjectId 
-      });
+      // Use childId if provided, otherwise use parent's ID
+      let actualUserId = parentId;
+      if (childId) {
+        // Verify child belongs to parent
+        const child = await User.findOne({ _id: childId, parentId });
+        if (!child) {
+          return res.status(403).json({ message: "Child not found or access denied" });
+        }
+        actualUserId = childId;
+      }
 
-      if (!userSubject || userSubject.locked) {
-        return res.status(403).json({ 
-          message: "Subject is locked. Please purchase to access this chapter.",
-          locked: true
+      // Create or update progress
+      let progress = await Progress.findOne({ userId: actualUserId, chapterId });
+      if (!progress) {
+        progress = await Progress.create({
+          userId: actualUserId,
+          subjectId: chapter.subjectId,
+          chapterId,
+          completed: true
         });
+      } else {
+        progress.completed = true;
+        await progress.save();
       }
 
       res.status(200).json({ 
-        message: "Chapter retrieved successfully", 
-        chapter,
-        locked: false
+        message: "Chapter marked as completed",
+        progress
       });
     } catch (error) {
       console.log(error);
