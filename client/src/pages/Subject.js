@@ -1,4 +1,5 @@
 // src/pages/subject.js
+//now trying on the quiz page to link and locking part 
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
