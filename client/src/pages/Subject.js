@@ -1,6 +1,6 @@
 // src/pages/subject.js
-//now trying on the quiz page to link and locking part 
-// now started the .py file 
+
+
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
