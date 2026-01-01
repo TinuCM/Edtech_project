@@ -1,6 +1,7 @@
 // src/pages/subject.js
 //now trying on the quiz page to link and locking part 
-import * as React from 'react';
+// now started the .py file 
+
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Cookies } from 'react-cookie';
