@@ -29,9 +29,9 @@ import BrushIcon from '@mui/icons-material/Brush';
 
 /* ---------- Images (public) ---------- */
 const DEFAULT_IMG = '/Confused_Cute_Dog.gif';
-const MATH_IMG = '/dog-math.png';
+const MATH_IMG = '/dog-math.gif';
 const SCIENCE_IMG = '/Science_gif.gif';
-const ENGLISH_IMG = '/dog-english.png';
+const ENGLISH_IMG = '/dog-english.gif';
 const ARTS_IMG = '/art_craft.gif';
 const AVATAR_IMG = '/avatar.png';
 
@@ -101,15 +101,15 @@ export default function SubjectPage() {
   const router = useRouter();
   const [activeImage, setActiveImage] = useState(DEFAULT_IMG);
 
-  useEffect(() => {
-    // Check if user is logged in
-    const token = cookies.get("token");
-    const selectedChildId = cookies.get("selectedChildId");
-    const selectedChildClass = cookies.get("selectedChildClass");
-    if (!token || !selectedChildId || !selectedChildClass) {
-      router.push("/profiles");
-    }
-  }, [router]);
+  // useEffect(() => {
+  //   // Check if user is logged in
+  //   const token = cookies.get("token");
+  //   const selectedChildId = cookies.get("selectedChildId");
+  //   const selectedChildClass = cookies.get("selectedChildClass");
+  //   if (!token || !selectedChildId || !selectedChildClass) {
+  //     router.push("/profiles");
+  //   }
+  // }, [router]);
 
   const subjects = [
     {
