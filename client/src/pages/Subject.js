@@ -101,15 +101,15 @@ export default function SubjectPage() {
   const router = useRouter();
   const [activeImage, setActiveImage] = useState(DEFAULT_IMG);
 
-  // useEffect(() => {
-  //   // Check if user is logged in
-  //   const token = cookies.get("token");
-  //   const selectedChildId = cookies.get("selectedChildId");
-  //   const selectedChildClass = cookies.get("selectedChildClass");
-  //   if (!token || !selectedChildId || !selectedChildClass) {
-  //     router.push("/profiles");
-  //   }
-  // }, [router]);
+  useEffect(() => {
+    // Check if user is logged in
+    const token = cookies.get("token");
+    const selectedChildId = cookies.get("selectedChildId");
+    const selectedChildClass = cookies.get("selectedChildClass");
+    if (!token || !selectedChildId || !selectedChildClass) {
+      router.push("/profiles");
+    }
+  }, [router]);
 
   const subjects = [
     {
