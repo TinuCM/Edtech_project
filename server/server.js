@@ -1,46 +1,83 @@
-const express = require("express"); // npm i express
-const mongoose = require("mongoose"); // npm i mongoose
-require("dotenv").config(); // Load environment variables. Make sure .env is in .gitignore
+// server/server.js
 
-const port = process.env.PORT || 5001;
+const express = require("express");
+const mongoose = require("mongoose");
+const path = require("path");
+const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
-const path = require("path");
+const port = process.env.PORT || 5001;
+
+/* -------------------------
+   MIDDLEWARE
+-------------------------- */
+app.use(
+  cors({
+    origin: "http://localhost:3000", // Next.js frontend
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files from uploads directory
+/* -------------------------
+   STATIC FILES
+-------------------------- */
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
+/* -------------------------
+   DATABASE CONNECTION
+-------------------------- */
 mongoose
-  .connect(process.env.MONGO_URI, {})
+  .connect(process.env.MONGO_URI)
   .then(() => {
-    console.log("Connected to MongoDB");
+    console.log(" Connected to MongoDB");
   })
   .catch((err) => {
-    console.log("Error connecting to MongoDB", err);
+    console.error(" MongoDB connection error:", err);
   });
 
-// Models
-// require("./models/Movie");
-require("./Models/User");
-require("./Models/Subject");
-require("./Models/Chapter");
-require("./Models/Progress");
-require("./Models/QuizScore");
-require("./Models/QuizQuestions");
-require("./Models/Leaderboard");
-require("./Models/UserSubject");
+/* -------------------------
+   MODELS (LOAD ONCE)
+    casing must match folder name exactly
+-------------------------- */
+require("./models/User");
+require("./models/Subject");
+require("./models/Chapter");
+require("./models/Progress");
+require("./models/QuizScore");
+require("./models/QuizQuestions");
+require("./models/Leaderboard");
+require("./models/UserSubject");
+require("./models/Attempt");
+require("./models/Question");
 
+/* -------------------------
+   ROUTES
+-------------------------- */
 
-// Routes
+// Function-based routes (existing)
+require("./Routes/authRoutes")(app);
+require("./Routes/chaptersRoutes")(app);
+require("./Routes/SubjectRoutes")(app);
+require("./Routes/paymentRoutes")(app);
 
-require("./Routes/authRoutes")(app); // Authentication BackEnd
-require("./Routes/chaptersRoutes")(app); // Chapters BackEnd
-require("./Routes/subjectRoutes")(app); // Subject BackEnd
-require("./Routes/paymentRoutes")(app); // Payment BackEnd
-require("./Routes/quizRoutes")(app); // Quiz BackEnd
+// Router-based quiz routes (IMPORTANT)
+const quizRoutes = require("./Routes/quizRoutes");
+app.use("/api/quiz", quizRoutes);
 
+/* -------------------------
+   HEALTH CHECK (OPTIONAL BUT USEFUL)
+-------------------------- */
+app.get("/health", (req, res) => {
+  res.json({ status: "OK", service: "Backend running" });
+});
+
+/* -------------------------
+   START SERVER
+-------------------------- */
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

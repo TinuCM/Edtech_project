@@ -1,32 +1,24 @@
 import React from "react";
 import { useRouter } from "next/router";
 import "@fontsource/alfa-slab-one";
- 
-import {
-  Box,
-  Button,
-  IconButton,
-  Typography
-} from "@mui/material";
- 
+
+import { Box, Button, IconButton, Typography } from "@mui/material";
+
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
- 
-export default function QuizIntroPage() {
+
+export default function DinoQuizIntro() {
   const router = useRouter();
- 
-  const handleQuizClick = () => {
-    router.push('/chapters');
-  };
+
   return (
     <Box
       sx={{
         minHeight: "100vh",
-        backgroundColor: "#ffffff",
+        bgcolor: "#ffffff",
         position: "relative",
         overflow: "hidden",
       }}
-      >
-      {/* Back Arrow */}
+    >
+      {/* Back Button */}
       <IconButton
         onClick={() => router.back()}
         sx={{
@@ -38,8 +30,8 @@ export default function QuizIntroPage() {
       >
         <ArrowBackIosNewIcon />
       </IconButton>
- 
-      {/* Text + Button — PERFECT CENTER */}
+
+      {/* Center Content */}
       <Box
         sx={{
           position: "absolute",
@@ -57,7 +49,7 @@ export default function QuizIntroPage() {
           sx={{
             fontSize: { xs: 28, md: 36 },
             fontWeight: 900,
-            mb: 2.5,
+            mb: 3,
             fontFamily: "'Alfa Slab One', cursive",
             color: "#000",
             lineHeight: 1.25,
@@ -65,46 +57,43 @@ export default function QuizIntroPage() {
         >
           Let’s check what you have <br /> learned!
         </Typography>
- 
+
         <Button
           variant="contained"
-          onClick={handleQuizClick}
+          onClick={() => router.push("/quiz")}
           sx={{
             px: 5,
-            py: 1.3,
+            py: 1.4,
             borderRadius: 999,
-            backgroundColor: "#ff8c00",
+            bgcolor: "#ff8c00",
             textTransform: "none",
             fontWeight: 700,
             fontSize: 16,
             boxShadow: "0 8px 20px rgba(255,140,0,0.35)",
             "&:hover": {
-              backgroundColor: "#fb8c00",
+              bgcolor: "#fb8c00",
             },
           }}
         >
           Quiz 👉
         </Button>
       </Box>
- 
-      {/* Dino GIF — UNCHANGED */}
-     <Box
-  component="img"
-  src="/dino.gif"
-  alt="Dino"
-  sx={{
-    position: "absolute",
-    bottom: { xs: -20, md: -30 },
-    left: "50%",
-    transform: "translateX(-50%)",
-    width: { xs: 460, md: 600 },
-    maxWidth: "95vw",
-    zIndex: 1,
-  }}
-/>
- 
+
+      {/* Dino Image */}
+      <Box
+        component="img"
+        src="/dino.gif"
+        alt="Dino"
+        sx={{
+          position: "absolute",
+          bottom: { xs: -20, md: -30 },
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: { xs: 460, md: 600 },
+          maxWidth: "95vw",
+          zIndex: 1,
+        }}
+      />
     </Box>
   );
 }
- 
- 

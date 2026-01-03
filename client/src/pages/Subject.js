@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Cookies } from 'react-cookie';
 
+import AuthFrame from "../components/common/AuthFrame";
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Card from '@mui/material/Card';
@@ -151,151 +152,177 @@ export default function SubjectPage() {
   ];
 
   return (
-    <Box
-      sx={{
-        minHeight: '100vh',
-        bgcolor: '#1EA0FF',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        p: 2,
-      }}
-    >
-      <Container maxWidth="lg" sx={{ bgcolor: '#fff', borderRadius: 4, boxShadow: 6, p: 3 }}>
-        {/* Header */}
-        <Box sx={{ position: 'relative', mb: 2 }}>
-          <Stack direction="row" alignItems="center" spacing={1}>
-            <IconButton onClick={() => router.back()}>
-              <ArrowBackIosNewIcon fontSize="small" />
-            </IconButton>
-            <Typography fontWeight={700}>Study Pilot</Typography>
-          </Stack>
-
-          <Stack direction="row" spacing={1} sx={{ position: 'absolute', right: 48, top: 0 }}>
-            <Tooltip title="Leaderboard">
-              <IconButton size="small"><EmojiEventsIcon fontSize="small" /></IconButton>
-            </Tooltip>
-            <Tooltip title="Language">
-              <IconButton size="small"><LanguageIcon fontSize="small" /></IconButton>
-            </Tooltip>
-          </Stack>
-
-          <Avatar src={AVATAR_IMG} sx={{ position: 'absolute', right: 0, top: 0 }} />
-        </Box>
-
-        <Divider sx={{ mb: 2 }} />
-
-        <Typography variant="h4" fontWeight={800}>
-          Explore your Subjects!
-        </Typography>
-        <Typography color="text.secondary" mb={2}>
-          Pick a world to start your adventure.
-        </Typography>
-
-        {/* Main Content */}
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: '7fr 5fr',
-            gap: 2,
-            alignItems: 'stretch',
-          }}
+    <AuthFrame showBack={false}>
+      {/* <Box
+        sx={{
+          minHeight: "100vh",
+          bgcolor: "#1EA0FF",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          p: 2,
+        }}
+      > */}
+        <Container
+          maxWidth="lg"
+          sx={{ bgcolor: "#fff", borderRadius: 0, boxShadow: 0, p: 0 }}
         >
-          {/* LEFT: Cards */}
-          <Box
-            sx={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 2,
-            }}
-          >
-            {subjects.map((s) => (
-              <SubjectCard
-                key={s.slug}
-                {...s}
-                onHover={() => setActiveImage(s.image)}
-                onLeave={() => setActiveImage(DEFAULT_IMG)}
-                onClick={() => {
-                  // Store subject info in cookies and route to chapters
-                  const selectedChildClass = cookies.get("selectedChildClass");
-                  const selectedChildId = cookies.get("selectedChildId");
-                  
-                  if (!selectedChildId || !selectedChildClass) {
-                    console.error("Child ID or Class not found. Redirecting to profiles.");
-                    router.push("/profiles");
-                    return;
-                  }
-                  
-                  cookies.set("selectedSubjectName", s.title, { path: "/", maxAge: 30 * 24 * 60 * 60 });
-                  cookies.set("selectedSubjectSlug", s.slug, { path: "/", maxAge: 30 * 24 * 60 * 60 });
-                  
-                  // Ensure child class is still set
-                  cookies.set("selectedChildClass", selectedChildClass, { path: "/", maxAge: 30 * 24 * 60 * 60 });
-                  
-                  console.log("Redirecting to chapters with:", {
-                    subject: s.title,
-                    childClass: selectedChildClass,
-                    childId: selectedChildId
-                  });
-                  
-                  router.push("/chapters");
-                }}
-              />
-            ))}
+          {/* Header */}
+          <Box sx={{ position: "relative", mb: 2 }}>
+            <Stack direction="row" alignItems="center" spacing={1}>
+              <IconButton onClick={() => router.back()}>
+                <ArrowBackIosNewIcon fontSize="small" />
+              </IconButton>
+              {/* <Typography fontWeight={700}>Study Pilot</Typography> */}
+            </Stack>
+
+            <Stack
+              direction="row"
+              spacing={1}
+              sx={{ position: "absolute", right: 48, top: 0 }}
+            >
+              <Tooltip title="Leaderboard">
+                <IconButton size="medium">
+                  <EmojiEventsIcon fontSize="medium" />
+                </IconButton>
+              </Tooltip>
+              {/* <Tooltip title="Language">
+                <IconButton size="small">
+                  <LanguageIcon fontSize="small" />
+                </IconButton>
+              </Tooltip> */}
+            </Stack>
+
+            <Avatar
+              src={AVATAR_IMG}
+              sx={{ position: "absolute", right: 0, top: 0 }}
+            />
           </Box>
 
-          {/* RIGHT: Image (height locked to cards) */}
+          <Divider sx={{ mb: 2 }} />
+
+          <Typography color="text.secondary" variant="h4" fontWeight={800}>
+            Explore your Subjects!
+          </Typography>
+          <Typography color="text.primary" mb={2}>
+            Pick a world to start your adventure.
+          </Typography>
+
+          {/* Main Content */}
           <Box
             sx={{
-              position: 'relative',
-              height: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              display: "grid",
+              gridTemplateColumns: "7fr 5fr",
+              gap: 2,
+              alignItems: "stretch",
             }}
           >
-
-
-            <Card
-              elevation={0}
+            {/* LEFT: Cards */}
+            <Box
               sx={{
-                width: '100%',
-                height: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                bgcolor: '#F8FBFF',
-                borderRadius: 5,
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: 2,
               }}
             >
-              <Box
-  sx={{
-    width: 300,
-    height: 300,
-    borderRadius: '10px',
-    overflow: 'hidden',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    bgcolor: 'transparent',
-  }}
->
-  <CardMedia
-    component="img"
-    image={activeImage}
-    alt="Subject helper"
-    sx={{
-      width: '100%',
-      height: '100%',
-      objectFit: 'contain',
-      borderRadius: '10px',
-    }}
-  />
-</Box>
-            </Card>
+              {subjects.map((s) => (
+                <SubjectCard
+                  key={s.slug}
+                  {...s}
+                  onHover={() => setActiveImage(s.image)}
+                  onLeave={() => setActiveImage(DEFAULT_IMG)}
+                  onClick={() => {
+                    // Store subject info in cookies and route to chapters
+                    const selectedChildClass =
+                      cookies.get("selectedChildClass");
+                    const selectedChildId = cookies.get("selectedChildId");
+
+                    if (!selectedChildId || !selectedChildClass) {
+                      console.error(
+                        "Child ID or Class not found. Redirecting to profiles."
+                      );
+                      router.push("/profiles");
+                      return;
+                    }
+
+                    cookies.set("selectedSubjectName", s.title, {
+                      path: "/",
+                      maxAge: 30 * 24 * 60 * 60,
+                    });
+                    cookies.set("selectedSubjectSlug", s.slug, {
+                      path: "/",
+                      maxAge: 30 * 24 * 60 * 60,
+                    });
+
+                    // Ensure child class is still set
+                    cookies.set("selectedChildClass", selectedChildClass, {
+                      path: "/",
+                      maxAge: 30 * 24 * 60 * 60,
+                    });
+
+                    console.log("Redirecting to chapters with:", {
+                      subject: s.title,
+                      childClass: selectedChildClass,
+                      childId: selectedChildId,
+                    });
+
+                    router.push("/chapters");
+                  }}
+                />
+              ))}
+            </Box>
+
+            {/* RIGHT: Image (height locked to cards) */}
+            <Box
+              sx={{
+                position: "relative",
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Card
+                elevation={0}
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  bgcolor: "#Ffff",
+                  borderRadius: 5,
+                }}
+              >
+                <Box
+                  sx={{
+                    width: 300,
+                    height: 300,
+                    borderRadius: "10px",
+                    overflow: "hidden",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    bgcolor: "transparent",
+                  }}
+                >
+                  <CardMedia
+                    component="img"
+                    image={activeImage}
+                    alt="Subject helper"
+                    sx={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                      borderRadius: "10px",
+                    }}
+                  />
+                </Box>
+              </Card>
+            </Box>
           </Box>
-        </Box>
-      </Container>
-    </Box>
+        </Container>
+      {/* </Box> */}
+    </AuthFrame>
   );
 }

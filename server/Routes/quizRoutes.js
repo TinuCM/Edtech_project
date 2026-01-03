@@ -1,145 +1,119 @@
-const mongoose = require("mongoose");
-const requireLogin = require("../middleware/requireLogin");
-const QuizQuestions = mongoose.model("quizquestions");
-const QuizScore = mongoose.model("quizScores");
-const Leaderboard = mongoose.model("leaderboards");
+const express = require("express");
+//const Question = require("../models/Question");
+const Question = require("../models/QuizQuestions");
 
-module.exports = (app) => {
-  // Get quiz questions for a chapter
-  app.get("/api/v1/quiz/questions/:chapterId", requireLogin, async (req, res) => {
-    const { chapterId } = req.params;
-    const { childId } = req.query;
-    const parentId = req.user._id;
-    const User = mongoose.model("edtechusers");
+const Attempt = require("../models/Attempt");
+const Leaderboard = require("../models/Leaderboard");
+const { calculatePoints } = require("../utils/points");
+const { callAdaptiveEngine } = require("../utils/adaptiveClient");
 
-    try {
-      // Use childId if provided
-      let actualUserId = parentId;
-      if (childId) {
-        const child = await User.findOne({ _id: childId, parentId });
-        if (!child) {
-          return res.status(403).json({ message: "Child not found or access denied" });
-        }
-        actualUserId = childId;
-      }
+const router = express.Router();
 
-      const questions = await QuizQuestions.find({ chapterId });
+/* -------------------------
+   START QUIZ
+-------------------------- */
+router.get("/start", async (req, res) => {
+  try {
+    const { childId, subject } = req.query;
 
-      if (!questions || questions.length === 0) {
-        return res.status(404).json({ message: "No quiz questions found for this chapter" });
-      }
-
-      // Return questions without correct answers
-      const questionsWithoutAnswers = questions.map(q => ({
-        _id: q._id,
-        question: q.question,
-        options: q.options
-      }));
-
-      res.status(200).json({
-        message: "Quiz questions retrieved successfully",
-        questions: questionsWithoutAnswers,
-        totalQuestions: questions.length
-      });
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({ message: error.message });
+    if (!childId || !subject) {
+      return res.status(400).json({ message: "Missing childId or subject" });
     }
-  });
 
-  // Submit quiz answers and get score
-  app.post("/api/v1/quiz/submit", requireLogin, async (req, res) => {
-    const { chapterId, answers, childId } = req.body; // answers: [{ questionId, selectedAnswer }]
-    const parentId = req.user._id;
-    const User = mongoose.model("edtechusers");
+    const question = await Question.findOne({
+      subject,
+      difficulty: "easy",
+      isActive: true,
+    });
 
-    try {
-      const Chapter = mongoose.model("chapters");
-      const chapter = await Chapter.findById(chapterId);
-      
-      if (!chapter) {
-        return res.status(404).json({ message: "Chapter not found" });
-      }
-
-      // Use childId if provided
-      let actualUserId = parentId;
-      if (childId) {
-        const child = await User.findOne({ _id: childId, parentId });
-        if (!child) {
-          return res.status(403).json({ message: "Child not found or access denied" });
-        }
-        actualUserId = childId;
-      }
-
-      // Get all questions for this chapter
-      const questions = await QuizQuestions.find({ chapterId });
-      
-      if (questions.length === 0) {
-        return res.status(404).json({ message: "No quiz questions found" });
-      }
-
-      // Calculate score
-      let correctAnswers = 0;
-      const results = questions.map(question => {
-        const userAnswer = answers.find(a => a.questionId === question._id.toString());
-        const isCorrect = userAnswer && userAnswer.selectedAnswer === question.correctAnswer;
-        if (isCorrect) correctAnswers++;
-        
-        return {
-          questionId: question._id,
-          question: question.question,
-          correctAnswer: question.correctAnswer,
-          userAnswer: userAnswer?.selectedAnswer || null,
-          isCorrect
-        };
-      });
-
-      const score = (correctAnswers / questions.length) * 100;
-      const totalMarks = questions.length;
-
-      // Save quiz score
-      let quizScore = await QuizScore.findOne({ userId: actualUserId, chapterId });
-      if (!quizScore) {
-        quizScore = await QuizScore.create({
-          userId: actualUserId,
-          subjectId: chapter.subjectId,
-          chapterId,
-          score: correctAnswers,
-          totalMarks
-        });
-      } else {
-        quizScore.score = correctAnswers;
-        quizScore.totalMarks = totalMarks;
-        await quizScore.save();
-      }
-
-      // Update leaderboard
-      const user = await User.findById(actualUserId);
-      if (user && user.classno) {
-        let leaderboard = await Leaderboard.findOne({ userId: actualUserId, classnumber: user.classno });
-        if (!leaderboard) {
-          leaderboard = await Leaderboard.create({
-            userId: actualUserId,
-            classnumber: user.classno,
-            totalScore: correctAnswers
-          });
-        } else {
-          leaderboard.totalScore = (leaderboard.totalScore || 0) + correctAnswers;
-          await leaderboard.save();
-        }
-      }
-
-      res.status(200).json({
-        message: "Quiz submitted successfully",
-        score: Math.round(score),
-        correctAnswers,
-        totalMarks,
-        results
-      });
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({ message: error.message });
+    if (!question) {
+      return res.json({ completed: true });
     }
-  });
-};
 
+    res.json({ completed: false, question });
+  } catch (err) {
+    console.error("QUIZ START ERROR:", err);
+    res.status(500).json({ message: "Failed to start quiz" });
+  }
+});
+
+/* -------------------------
+   SUBMIT ANSWER
+-------------------------- */
+router.post("/answer", async (req, res) => {
+  try {
+    const { childId, questionId, isCorrect } = req.body;
+
+    const question = await Question.findById(questionId);
+    if (!question) {
+      return res.status(404).json({ message: "Question not found" });
+    }
+
+    // Save attempt
+    await Attempt.create({
+      childId,
+      questionId,
+      subject: question.subject,
+      topic: question.topic,
+      difficulty: question.difficulty,
+      isCorrect,
+    });
+
+    // Points
+    const points = calculatePoints(question.difficulty, isCorrect);
+
+    // Leaderboard
+    await Leaderboard.findOneAndUpdate(
+      { childId },
+      {
+        $inc: {
+          [`subjects.${question.subject}`]: points,
+          totalPoints: points,
+        },
+        $set: { updatedAt: new Date() },
+      },
+      { upsert: true }
+    );
+
+    // Recent attempts
+    const attempts = await Attempt.find({ childId, subject: question.subject })
+      .sort({ createdAt: -1 })
+      .limit(5);
+
+    // Adaptive decision
+    const adaptive = await callAdaptiveEngine({
+      child_id: childId,
+      subject: question.subject,
+      attempts: attempts.map((a) => ({
+        topic: a.topic,
+        difficulty: a.difficulty,
+        is_correct: a.isCorrect,
+      })),
+    });
+
+    // Next question
+    const attemptedIds = attempts.map((a) => a.questionId);
+
+    const nextQuestion = await Question.findOne({
+      subject: question.subject,
+      difficulty: adaptive.next_difficulty,
+      _id: { $nin: attemptedIds },
+      isActive: true,
+    });
+
+    if (!nextQuestion) {
+      return res.json({ completed: true });
+    }
+
+    res.json({
+      completed: false,
+      question: nextQuestion,
+      adaptive,
+    });
+  } catch (err) {
+    console.error("QUIZ ANSWER ERROR:", err);
+    res.status(500).json({ message: "Quiz evaluation failed" });
+  }
+});
+
+module.exports = router;

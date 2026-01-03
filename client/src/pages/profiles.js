@@ -45,6 +45,28 @@ export default function Profiles() {
   const [showSessionOtp, setShowSessionOtp] = useState(false);
   const router = useRouter();
 
+  //saving current avatar for the next pages in cookies 
+  const AvatarHandling = (profile) => {
+    cookies.set("selectedChildId", profile.id, {
+      path: "/",
+      maxAge: 30 * 24 * 60 * 60,
+    });
+    cookies.set("selectedChildName", profile.name, {
+      path: "/",
+      maxAge: 30 * 24 * 60 * 60,
+    });
+    cookies.set("selectedChildClass", profile.classno, {
+      path: "/",
+      maxAge: 30 * 24 * 60 * 60,
+    });
+    cookies.set("selectedChildEmoji", profile.emoji, {
+      path: "/",
+      maxAge: 30 * 24 * 60 * 60,
+    }); 
+
+    router.push("/Subject");
+  };
+
   // Get token from cookies
   const token = cookies.get("token");
   const parentEmail = cookies.get("parentEmail");
